@@ -282,7 +282,7 @@
 		"Action": "Overwrite",
 		"Value":[
         { "item": "ShardMagic", "amount": 2 },
-        { "item": "GreydwarfEye", "amount": 1 },
+        { "item": "GreydwarfEye", "amount": 1 }
       ]
 	  },
 	  {
@@ -290,7 +290,7 @@
 		"Action": "Overwrite",
 		"Value":[
         { "item": "ShardRare", "amount": 2 },
-        { "item": "Root", "amount": 1 },
+        { "item": "Root", "amount": 1 }
       ]
 	  },
 	  {
@@ -312,7 +312,7 @@
 		"Action": "Overwrite",
 		"Value":[
         { "item": "ShardEpic", "amount": 2 },
-        { "item": "GoblinTotem", "amount": 1 },
+        { "item": "GoblinTotem", "amount": 1 }
       ]
 	  },
 	  {
@@ -334,7 +334,7 @@
 		"Action": "Overwrite",
 		"Value":[
         { "item": "ShardLegendary", "amount": 2 },
-        { "item": "Eitr", "amount": 1 },
+        { "item": "Eitr", "amount": 1 }
       ]
 	  },
     ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -345,7 +345,7 @@
         { "item": "ShardMagic", "amount": 2 },
         { "item": "Pukeberries", "amount": 1 },
         { "item": "BoneFragments", "amount": 20 },
-        { "item": "GreydwarfEye", "amount": 1 },
+        { "item": "GreydwarfEye", "amount": 1 }
       ]
 	  },
 	  {
@@ -355,7 +355,7 @@
         { "item": "ShardRare", "amount": 2 },
         { "item": "Pukeberries", "amount": 1 },
         { "item": "BoneFragments", "amount": 20 },
-        { "item": "Root", "amount": 1 },
+        { "item": "Root", "amount": 1 }
       ]
 	  },
 	  {
@@ -381,7 +381,7 @@
         { "item": "ShardEpic", "amount": 2 },
         { "item": "Pukeberries", "amount": 1 },
         { "item": "BoneFragments", "amount": 20 },
-        { "item": "GoblinTotem", "amount": 1 },
+        { "item": "GoblinTotem", "amount": 1 }
       ]
 	  },
 	  {
@@ -407,7 +407,7 @@
         { "item": "ShardLegendary", "amount": 2 },
         { "item": "Pukeberries", "amount": 1 },
         { "item": "BoneFragments", "amount": 20 },
-        { "item": "Eitr", "amount": 1 },
+        { "item": "Eitr", "amount": 1 }
       ]
 	  },
     // Remove junk recipes

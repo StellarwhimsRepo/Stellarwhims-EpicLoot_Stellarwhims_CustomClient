@@ -52,7 +52,7 @@
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	  {
 		"Path": "$.ItemSets[?(@.Name == 'TrollArmor')]",
-		"Action": "Remove",
+		"Action": "Remove"
 	  },
 	  {
 		"Path": "$.ItemSets[?(@.Name == 'Tier2Everything')].Loot[?(@.Item == 'TrollArmor')]",
@@ -62,15 +62,15 @@
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	  {
 		"Path": "$.ItemSets[?(@.Name == 'Tier3Armor')].Loot[?(@.Item == 'ArmorRootChest')]",
-		"Action": "Remove",
+		"Action": "Remove"
 	  },
 	  {
 		"Path": "$.ItemSets[?(@.Name == 'Tier3Armor')].Loot[?(@.Item == 'ArmorRootLegs')]",
-		"Action": "Remove",
+		"Action": "Remove"
 	  },
 	  {
 		"Path": "$.ItemSets[?(@.Name == 'Tier3Armor')].Loot[?(@.Item == 'HelmetRoot')]",
-		"Action": "Remove",
+		"Action": "Remove"
 	  },
     // Tier 4 Items
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -81,7 +81,7 @@
         { "Item": "SwordSilver",     "Weight": 5, "Rarity": [ 0, 39, 54, 7 ] },
         { "Item": "SpearWolfFang",   "Weight": 5, "Rarity": [ 0, 39, 54, 7 ] },
         { "Item": "KnifeSilver",     "Weight": 5, "Rarity": [ 0, 39, 54, 7 ] },
-        { "Item": "BowDraugrFang",   "Weight": 1, "Rarity": [ 0, 39, 54, 7 ] },
+        { "Item": "BowDraugrFang",   "Weight": 1, "Rarity": [ 0, 39, 54, 7 ] }
       ]
 	  },
 	  {
@@ -91,7 +91,7 @@
         { "Item": "ArmorWolfLegs",      "Weight": 1, "Rarity": [ 0, 39, 54, 7 ] },
         { "Item": "ArmorWolfChest",     "Weight": 1, "Rarity": [ 0, 39, 54, 7 ] },
         { "Item": "HelmetDrake",        "Weight": 1, "Rarity": [ 0, 39, 54, 7 ] },
-        { "Item": "CapeWolf",           "Weight": 1, "Rarity": [ 0, 39, 54, 7 ] },
+        { "Item": "CapeWolf",           "Weight": 1, "Rarity": [ 0, 39, 54, 7 ] }
       ]
 	  },
 	  {

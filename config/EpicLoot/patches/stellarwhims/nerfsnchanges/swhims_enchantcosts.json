@@ -24,15 +24,15 @@
   //Remove all non boss trophies except the first one
 	  {
 		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_troll')]",
-		"Action": "Remove",
+		"Action": "Remove"
 	  },
 	  {
 		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_fenring')]",
-		"Action": "Remove",
+		"Action": "Remove"
 	  },
 	  {
 		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_deathsquito')]",
-		"Action": "Remove",
+		"Action": "Remove"
 	  },
   //Add non boss trophies back organized per zone
   //Meadows trophies

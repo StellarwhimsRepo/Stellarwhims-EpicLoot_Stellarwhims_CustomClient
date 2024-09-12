@@ -2,10 +2,10 @@
 	"name": "EpicLoot_Stellarwhims_CustomClient",
 	"author": "Stellarwhims",
 	"description": "Updated loot tables, damage, and effects that focus enchanting materials and encourage progression. Some vanilla block, parry, health, stamina values are preserved.",
-	"version_number": "2.0.1",
+	"version_number": "2.0.2",
 	"website_url": "",
 	"dependencies": [
-		"RandyKnapp-EpicLoot-0.9.37",
+		"RandyKnapp-EpicLoot-0.10.3",
 		"Azumatt-Azus_UnOfficial_ConfigManager-18.0.1",
 		"denikson-BepInExPack_Valheim-5.4.2202"
 	]
