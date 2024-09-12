@@ -1,0 +1,581 @@
+{
+  "TargetFile": "materialconversions.json", 
+  "Author": "Stellarwhims",
+  "Priority": 500,
+  "RequireAll": true, 
+  "Patches": [ 
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_ShardRareUpgrade')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "ShardMagic", "amount": 5 },
+        { "item": "RunestoneRare", "amount": 1 },
+        { "item": "Root", "amount": 1 }
+      ]
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_ShardRareUpgrade2",
+      "Product": "ShardRare",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "ShardMagic", "amount": 5 },
+        { "item": "RunestoneRare", "amount": 1 },
+        { "item": "FreezeGland", "amount": 1 }
+      ]
+    }
+      
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_ShardEpicUpgrade')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "ShardRare", "amount": 5 },
+        { "item": "RunestoneEpic", "amount": 1 },
+        { "item": "GoblinTotem", "amount": 1 }
+      ]
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_ShardEpicUpgrade2",
+      "Product": "ShardEpic",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "ShardEpic", "amount": 5 },
+        { "item": "RunestoneEpic", "amount": 1 },
+        { "item": "DragonTear", "amount": 1 }
+      ]
+    }
+      
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_ShardLegendaryUpgrade')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "ShardEpic", "amount": 5 },
+        { "item": "RunestoneLegendary", "amount": 1 },
+        { "item": "Eitr", "amount": 1 }
+      ]
+	  },
+	  
+	  
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_MagicDustToGDEye_Conversion_upgrade",
+      "Product": "GreydwarfEye",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "DustMagic", "amount": 1 }
+      ]
+    }
+      
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_RareDustToRoot_Conversion_upgrade",
+      "Product": "Root",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "DustRare", "amount": 1 }
+      ]
+    }
+      
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_RareDustToFreezeGland_Conversion_upgrade",
+      "Product": "FreezeGland",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "DustRare", "amount": 1 }
+      ]
+    }
+      
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_EpicDustToGTotem_Conversion_upgrade",
+      "Product": "GoblinTotem",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "DustEpic", "amount": 1 }
+      ]
+    }
+      
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_EpicDustToDTear_Conversion_upgrade",
+      "Product": "DragonTear",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "DustEpic", "amount": 1 }
+      ]
+    }
+      
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_LegendaryDustToEitr_Conversion_upgrade",
+      "Product": "Eitr",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "DustLegendary", "amount": 1 }
+      ]
+    }
+	  },
+  //remove original dusts conversion recipes
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_DustRareUpgrade')]",
+		"Action": "Remove"
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_DustEpicUpgrade')]",
+		"Action": "Remove"
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_DustLegendaryUpgrade')]",
+		"Action": "Remove"
+	  },
+  //overwrite reagent upgrades
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_ReagentRareUpgrade')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "ReagentMagic", "amount": 5 },
+        { "item": "RunestoneRare", "amount": 1 },
+        { "item": "Root", "amount": 1 }
+      ]
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_ReagentRareUpgrade2",
+      "Product": "ReagentRare",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "ReagentMagic", "amount": 5 },
+        { "item": "RunestoneRare", "amount": 1 },
+        { "item": "FreezeGland", "amount": 1 }
+      ]
+    }
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_ReagentEpicUpgrade')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "ReagentRare", "amount": 5  },
+        { "item": "RunestoneEpic", "amount": 1 },
+        { "item": "GoblinTotem", "amount": 1 }
+      ]
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_ReagentEpicUpgrade2",
+      "Product": "ReagentEpic",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "ReagentRare", "amount": 5 },
+        { "item": "RunestoneEpic", "amount": 1 },
+        { "item": "DragonTear", "amount": 1 }
+      ]
+    }
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_ReagentLegendaryUpgrade')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "ReagentEpic", "amount": 5  },
+        { "item": "RunestoneLegendary", "amount": 1 },
+        { "item": "Eitr", "amount": 1 }
+      ]
+	  },
+  //overwrite essence upgrades
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_EssenceRareUpgrade')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "EssenceMagic", "amount": 5 },
+        { "item": "RunestoneRare", "amount": 1 },
+        { "item": "Root", "amount": 1 }
+      ]
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_EssenceRareUpgrade2",
+      "Product": "ReagentRare",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "EssenceMagic", "amount": 5 },
+        { "item": "RunestoneRare", "amount": 1 },
+        { "item": "FreezeGland", "amount": 1 }
+      ]
+    }
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_EssenceEpicUpgrade')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "EssenceRare", "amount": 5  },
+        { "item": "RunestoneEpic", "amount": 1 },
+        { "item": "GoblinTotem", "amount": 1 }
+      ]
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_EssenceEpicUpgrade2",
+      "Product": "EssenceEpic",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "EssenceRare", "amount": 5 },
+        { "item": "RunestoneEpic", "amount": 1 },
+        { "item": "DragonTear", "amount": 1 }
+      ]
+    }
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_EssenceLegendaryUpgrade')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "EssenceEpic", "amount": 5  },
+        { "item": "RunestoneLegendary", "amount": 1 },
+        { "item": "Eitr", "amount": 1 }
+      ]
+	  },
+  //overwrite runestone upgrades
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_RunestoneRareUpgrade')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "RunestoneMagic", "amount": 5 },
+        { "item": "SurtlingCore", "amount": 5 },
+        { "item": "Thunderstone", "amount": 1 },
+        { "item": "Root", "amount": 1 }
+      ]
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_RunestoneRareUpgrade2",
+      "Product": "RunestoneRare",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "RunestoneMagic", "amount": 5 },
+        { "item": "SurtlingCore", "amount": 5 },
+        { "item": "Thunderstone", "amount": 1 },
+        { "item": "FreezeGland", "amount": 1 }
+      ]
+    }
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_RunestoneEpicUpgrade')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "RunestoneRare", "amount": 5  },
+        { "item": "SurtlingCore", "amount": 5 },
+        { "item": "Thunderstone", "amount": 2 },
+        { "item": "GoblinTotem", "amount": 1 }
+      ]
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_RunestoneEpicUpgrade2",
+      "Product": "RunestoneEpic",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "RunestoneRare", "amount": 5  },
+        { "item": "SurtlingCore", "amount": 5 },
+        { "item": "Thunderstone", "amount": 2 },
+        { "item": "DragonTear", "amount": 1 }
+      ]
+    }
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_RunestoneLegendaryUpgrade')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "RunestoneEpic", "amount": 5  },
+        { "item": "SurtlingCore", "amount": 5 },
+        { "item": "Thunderstone", "amount": 3 },
+        { "item": "Eitr", "amount": 1 }
+      ]
+	  },
+  //remove original shard to dust conversion recipes
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_MagicShardToDust_Conversion')]",
+		"Action": "Remove"
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_RareShardToDust_Conversion')]",
+		"Action": "Remove"
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_EpicShardToDust_Conversion')]",
+		"Action": "Remove"
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_LegendaryShardToDust_Conversion')]",
+		"Action": "Remove"
+	  },
+  //overwrite shard to essence and shard to reagent conversion
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_MagicShardToEssence_Conversion')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "ShardMagic", "amount": 2 },
+        { "item": "GreydwarfEye", "amount": 1 }
+		]
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_MagicShardToReagent_Conversion')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "ShardMagic", "amount": 2 },
+        { "item": "Pukeberries", "amount": 1 },
+        { "item": "BoneFragments", "amount": 20 },
+        { "item": "GreydwarfEye", "amount": 1 }
+		]
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_RareShardToEssence_Conversion')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "ShardRare", "amount": 2 },
+        { "item": "Root", "amount": 1 }
+		]
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_RareShardToReagent_Conversion')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "ShardRare", "amount": 2 },
+        { "item": "Pukeberries", "amount": 1 },
+        { "item": "BoneFragments", "amount": 20 },
+        { "item": "Root", "amount": 1 }
+		]
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_RareShardToEssence_Conversion2",
+      "Product": "EssenceRare",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "ShardRare", "amount": 2 },
+        { "item": "FreezeGland", "amount": 1 }
+      ]
+    }
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_RareShardToReagent_Conversion2",
+      "Product": "ReagentRare",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "ShardRare", "amount": 2 },
+        { "item": "Pukeberries", "amount": 1 },
+        { "item": "BoneFragments", "amount": 20 },
+        { "item": "FreezeGland", "amount": 1 }
+      ]
+    }
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_EpicShardToEssence_Conversion')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "ShardEpic", "amount": 2 },
+        { "item": "GoblinTotem", "amount": 1 }
+		]
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_EpicShardToReagent_Conversion')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "ShardEpic", "amount": 2 },
+        { "item": "Pukeberries", "amount": 1 },
+        { "item": "BoneFragments", "amount": 20 },
+        { "item": "GoblinTotem", "amount": 1 }
+		]
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_EpicShardToEssence_Conversion2",
+      "Product": "EssenceEpic",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "ShardEpic", "amount": 2 },
+        { "item": "DragonTear", "amount": 1 }
+      ]
+    }
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_EpicShardToReagent_Conversion2",
+      "Product": "ReagentEpic",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "item": "ShardEpic", "amount": 2 },
+        { "item": "Pukeberries", "amount": 1 },
+        { "item": "BoneFragments", "amount": 20 },
+        { "item": "DragonTear", "amount": 1 }
+      ]
+    }
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_LegendaryShardToEssence_Conversion')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "ShardLegendary", "amount": 2 },
+        { "item": "Eitr", "amount": 1 }
+		]
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_LegendaryShardToReagent_Conversion')].Resources",
+		"Action": "Overwrite",
+		"Value":[
+        { "item": "ShardLegendary", "amount": 2 },
+        { "item": "Pukeberries", "amount": 1 },
+        { "item": "BoneFragments", "amount": 20 },
+        { "item": "Eitr", "amount": 1 }
+		]
+	  },
+  //remove some trophy and item creation recipes
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_BoneSkeletonTrophy')]",
+		"Action": "Remove"
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_EyeGreydwarfTrophy')]",
+		"Action": "Remove"
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_CoreSurtlingTrophy')]",
+		"Action": "Remove"
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_FreezeGlandDrakeTrophy')]",
+		"Action": "Remove"
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_DragonTearRunestone')]",
+		"Action": "Remove"
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_YagluthThingRunestone')]",
+		"Action": "Remove"
+	  },
+	  {
+		"Path": "$.MaterialConversions[?(@.Name == 'Recipe_SeekerQueenRunestone')]",
+		"Action": "Remove"
+	  },
+  //change some common items to enchanting mats
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_AntlerMagicReagent",
+      "Product": "ReagentMagic",
+      "Amount": 1,
+      "Type": "Junk", 
+      "Resources": [
+        { "Item": "HardAntler", "Amount": 5 },
+        { "item": "GreydwarfEye", "amount": 1 }
+      ]
+    }
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_HideMagicEssence",
+      "Product": "EssenceMagic",
+      "Amount": 1,
+      "Type": "Junk", 
+      "Resources": [
+        { "Item": "TrollHide", "Amount": 10 },
+        { "item": "GreydwarfEye", "amount": 1 }
+      ]
+    }
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_HideEpicEssence",
+      "Product": "EssenceEpic",
+      "Amount": 1,
+      "Type": "Junk", 
+      "Resources": [
+        { "Item": "LoxPelt", "Amount": 10 },
+        { "item": "GoblinTotem", "amount": 1 }
+      ]
+    }
+	  },
+	  {
+		"Path": "$.MaterialConversions",
+		"Action": "Append",
+		"Value":     {
+      "Name": "Recipe_HideEpicEssence2",
+      "Product": "EssenceEpic",
+      "Amount": 1,
+      "Type": "Upgrade", 
+      "Resources": [
+        { "Item": "LoxPelt", "Amount": 10 },
+        { "item": "DragonTear", "amount": 1 }
+      ]
+    }
+	  },
+  ]
+}
+

@@ -1,0 +1,447 @@
+{
+  "TargetFile": "enchantcosts.json", 
+  "Author": "Stellarwhims",
+  "Priority": 500,
+  "RequireAll": true, 
+  "Patches": [
+  //Remove Dusts from DisenchantProducts.Products
+	  {
+		"Path": "$.DisenchantProducts..Products[?(@.Item == 'DustMagic')]",
+		"Action": "Remove"
+	  },
+	  {
+		"Path": "$.DisenchantProducts..Products[?(@.Item == 'DustRare')]",
+		"Action": "Remove"
+	  },
+	  {
+		"Path": "$.DisenchantProducts..Products[?(@.Item == 'DustEpic')]",
+		"Action": "Remove"
+	  },
+	  {
+		"Path": "$.DisenchantProducts..Products[?(@.Item == 'DustLegendary')]",
+		"Action": "Remove"
+	  },
+  //Remove all non boss trophies except the first one
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_troll')]",
+		"Action": "Remove",
+	  },
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_fenring')]",
+		"Action": "Remove",
+	  },
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_deathsquito')]",
+		"Action": "Remove",
+	  },
+  //Add non boss trophies back organized per zone
+  //Meadows trophies
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_boar')].ItemNames",
+		"Action": "Overwrite",
+		"Value": [ "$item_trophy_boar", "$item_trophy_deer",  "$item_trophy_neck" ]
+	  },
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_boar')].Products",
+		"Action": "Overwrite",
+		"Value": [ { "Item": "EssenceMagic", "Amount":1 } ]
+	  },
+  //Mistlands trophies
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_boar')]",
+		"Action": "InsertAfter",
+		"Value":
+    {
+      "ItemTypes" : [ "Trophy" ],
+      "ItemNames" : [ "$item_trophy_tick", "$item_trophy_hare", "$item_trophy_seeker", "$item_trophy_seeker_brute", "$item_trophy_gjall", "$item_trophy_dvergr" ],
+      "Products" : [ { "Item": "ShardLegendary", "Amount": 1 } ]
+    }
+	  },
+  //Plains hard trophies
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_boar')]",
+		"Action": "InsertAfter",
+		"Value":
+    {
+      "ItemTypes" : [ "Trophy" ],
+      "ItemNames" : [ "$item_trophy_goblinbrute", "$item_trophy_goblinshaman" ],
+      "Products" : [ { "Item": "ShardEpic", "Amount": 1 } ]
+    }
+	  },
+  //Plains trophies
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_boar')]",
+		"Action": "InsertAfter",
+		"Value":
+    {
+      "ItemTypes" : [ "Trophy" ],
+      "ItemNames" : [ "$item_trophy_deathsquito", "$item_trophy_lox", "$item_trophy_goblin", "$item_trophy_growth" ],
+      "Products" : [ { "Item": "ShardEpic", "Amount": 1 } ]
+    }
+	  },
+  //Ocean trophies
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_boar')]",
+		"Action": "InsertAfter",
+		"Value":
+    {
+      "ItemTypes" : [ "Trophy" ],
+      "ItemNames" : [ "$item_trophy_serpent" ],
+      "Products" : [ { "Item": "ShardEpic", "Amount": 1 } ]
+    }
+	  },
+  //Mountain hard trophies
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_boar')]",
+		"Action": "InsertAfter",
+		"Value":
+    {
+      "ItemTypes" : [ "Trophy" ],
+      "ItemNames" : [ "$item_trophy_fenring", "$item_trophy_ulv", "$item_trophy_cultist" ],
+      "Products" : [ { "Item": "ShardEpic", "Amount": 1 } ]
+    }
+	  },
+  //Mountain trophies
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_boar')]",
+		"Action": "InsertAfter",
+		"Value":
+    {
+      "ItemTypes" : [ "Trophy" ],
+      "ItemNames" : [ "$item_trophy_sgolem", "$item_trophy_hatchling", "$item_trophy_wolf" ],
+      "Products" : [ { "Item": "ShardRare", "Amount": 1 } ]
+    }
+	  },
+  //Swamp hard trophies
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_boar')]",
+		"Action": "InsertAfter",
+		"Value":
+    {
+      "ItemTypes" : [ "Trophy" ],
+      "ItemNames" : [ "$item_trophy_abomination" ],
+      "Products" : [ { "Item": "ShardEpic", "Amount": 1 } ]
+    }
+	  },
+  //Swamp trophies
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_boar')]",
+		"Action": "InsertAfter",
+		"Value":
+    {
+      "ItemTypes" : [ "Trophy" ],
+      "ItemNames" : [ "$item_trophy_wraith", "$item_trophy_leech", "$item_trophy_surtling", "$item_trophy_draugrfem", "$item_trophy_draugr", "$item_trophy_draugrelite", "$item_trophy_blob" ],
+      "Products" : [ { "Item": "ShardRare", "Amount": 1 } ]
+    }
+	  },
+  //Black Forest hard trophies
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_boar')]",
+		"Action": "InsertAfter",
+		"Value":
+    {
+      "ItemTypes" : [ "Trophy" ],
+      "ItemNames" : [ "$item_trophy_troll", "$item_trophy_foresttroll" ],
+      "Products" : [ { "Item": "ShardRare", "Amount": 1 } ]
+    }
+	  },
+  //Black Forest trophies
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_boar')]",
+		"Action": "InsertAfter",
+		"Value":
+    {
+      "ItemTypes" : [ "Trophy" ],
+      "ItemNames" : [ "$item_trophy_skeletonpoison", "$item_trophy_greydwarf", "$item_trophy_skeleton", "$item_trophy_greydwarfbrute", "$item_trophy_greydwarfshaman" ],
+      "Products" : [ { "Item": "ShardMagic", "Amount": 1 } ]
+    }
+	  },
+  //Update Boss trophies products
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_elder')].Products",
+		"Action": "Overwrite",
+		"Value": [ { "Item": "RunestoneMagic", "Amount": 1 } ]
+	  },
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_bonemass')].Products",
+		"Action": "Overwrite",
+		"Value": [ { "Item": "RunestoneRare", "Amount": 1 } ]
+	  },
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_dragonqueen')].Products",
+		"Action": "Overwrite",
+		"Value": [ { "Item": "RunestoneEpic", "Amount": 1 } ]
+	  },	  
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_goblinking')].Products",
+		"Action": "Overwrite",
+		"Value": [ { "Item": "RunestoneEpic", "Amount": 1 } ]
+	  },
+  //update boss drops
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_dragontear')].Products",
+		"Action": "Overwrite",
+		"Value":[
+        { "Item": "EssenceEpic", "Amount": 2 },
+        { "Item": "ReagentEpic", "Amount": 2 }
+      ]
+	  },
+	  {
+		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_yagluththing')].Products",
+		"Action": "Overwrite",
+		"Value":[
+        { "Item": "EssenceEpic", "Amount": 3 },
+        { "Item": "ReagentEpic", "Amount": 3 }
+      ]
+	  },
+  //rewrite enchant costs
+	  {
+		"Path": "$.EnchantCosts",
+		"Action": "Overwrite",
+		"Value":
+[
+    {
+      "ItemTypes" : [ "OneHandedWeapon", "Bow", "TwoHandedWeapon", "TwoHandedWeaponLeft", "Torch", "Tool" ],
+      "Rarity": "Magic",
+      "Cost": [
+        { "Item": "RunestoneMagic", "Amount": 1 },
+        { "Item": "GreydwarfEye",      "Amount": 5 },
+        { "Item": "EssenceMagic",   "Amount": 5 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "OneHandedWeapon", "Bow", "TwoHandedWeapon", "TwoHandedWeaponLeft", "Torch", "Tool" ],
+      "Rarity": "Rare",
+      "Cost": [
+        { "Item": "RunestoneRare", "Amount": 1 },
+        { "Item": "Root",      "Amount": 5 },
+        { "Item": "EssenceRare",   "Amount": 5 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "OneHandedWeapon", "Bow", "TwoHandedWeapon", "TwoHandedWeaponLeft", "Torch", "Tool" ],
+      "Rarity": "Epic",
+      "Cost": [
+        { "Item": "RunestoneEpic", "Amount": 1 },
+        { "Item": "GoblinTotem",      "Amount": 1 },
+        { "Item": "EssenceEpic",   "Amount": 5 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "OneHandedWeapon", "Bow", "TwoHandedWeapon", "TwoHandedWeaponLeft", "Torch", "Tool" ],
+      "Rarity": "Legendary",
+      "Cost": [
+        { "Item": "RunestoneLegendary", "Amount": 1 },
+        { "Item": "Eitr",      "Amount": 10 },
+        { "Item": "EssenceLegendary",   "Amount": 5 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "Shield", "Helmet", "Chest", "Legs", "Shoulder", "Utility" ],
+      "Rarity": "Magic",
+      "Cost": [
+        { "Item": "RunestoneMagic", "Amount": 1 },
+        { "Item": "GreydwarfEye",      "Amount": 5 },
+        { "Item": "ReagentMagic",   "Amount": 5 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "Shield", "Helmet", "Chest", "Legs", "Shoulder", "Utility" ],
+      "Rarity": "Rare",
+      "Cost": [
+        { "Item": "RunestoneRare", "Amount": 1 },
+        { "Item": "Root",      "Amount": 5 },
+        { "Item": "ReagentRare",   "Amount": 5 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "Shield", "Helmet", "Chest", "Legs", "Shoulder", "Utility" ],
+      "Rarity": "Epic",
+      "Cost": [
+        { "Item": "RunestoneEpic", "Amount": 1 },
+        { "Item": "GoblinTotem",      "Amount": 1 },
+        { "Item": "ReagentEpic",   "Amount": 5 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "Shield", "Helmet", "Chest", "Legs", "Shoulder", "Utility" ],
+      "Rarity": "Legendary",
+      "Cost": [
+        { "Item": "RunestoneLegendary", "Amount": 1 },
+        { "Item": "Eitr",      "Amount": 10 },
+        { "Item": "ReagentLegendary",   "Amount": 5 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "OneHandedWeapon", "Bow", "TwoHandedWeapon", "TwoHandedWeaponLeft", "Torch", "Tool" ],
+      "Rarity": "Rare",
+      "Cost": [
+        { "Item": "RunestoneRare", "Amount": 1 },
+        { "Item": "FreezeGland",      "Amount": 1 },
+        { "Item": "EssenceRare",   "Amount": 5 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "Shield", "Helmet", "Chest", "Legs", "Shoulder", "Utility" ],
+      "Rarity": "Rare",
+      "Cost": [
+        { "Item": "RunestoneRare", "Amount": 1 },
+        { "Item": "FreezeGland",      "Amount": 1 },
+        { "Item": "ReagentRare",   "Amount": 5 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "OneHandedWeapon", "Bow", "TwoHandedWeapon", "TwoHandedWeaponLeft", "Torch", "Tool" ],
+      "Rarity": "Epic",
+      "Cost": [
+        { "Item": "RunestoneEpic", "Amount": 1 },
+        { "Item": "DragonTear",      "Amount": 5 },
+        { "Item": "EssenceEpic",   "Amount": 5 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "Shield", "Helmet", "Chest", "Legs", "Shoulder", "Utility" ],
+      "Rarity": "Epic",
+      "Cost": [
+        { "Item": "RunestoneEpic", "Amount": 1 },
+        { "Item": "DragonTear",      "Amount": 5 },
+        { "Item": "ReagentEpic",   "Amount": 5 }
+      ]
+    }
+  ]		
+	  },
+  //rewrite augment costs
+	  {
+		"Path": "$.AugmentCosts",
+		"Action": "Overwrite",
+		"Value":
+[
+    {
+      "ItemTypes" : [ "OneHandedWeapon", "Bow", "TwoHandedWeapon", "TwoHandedWeaponLeft", "Torch", "Tool" ],
+      "Rarity": "Magic",
+      "Cost": [
+        { "Item": "ShardMagic",   "Amount": 1 },
+        { "Item": "GreydwarfEye",    "Amount": 1 },
+        { "Item": "EssenceMagic", "Amount": 1 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "OneHandedWeapon", "Bow", "TwoHandedWeapon", "TwoHandedWeaponLeft", "Torch", "Tool" ],
+      "Rarity": "Rare",
+      "Cost": [
+        { "Item": "ShardRare",   "Amount": 1 },
+        { "Item": "Root",    "Amount": 1 },
+        { "Item": "EssenceRare", "Amount": 1 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "OneHandedWeapon", "Bow", "TwoHandedWeapon", "TwoHandedWeaponLeft", "Torch", "Tool" ],
+      "Rarity": "Epic",
+      "Cost": [
+        { "Item": "ShardEpic",   "Amount": 1 },
+        { "Item": "GoblinTotem",    "Amount": 1 },
+        { "Item": "EssenceEpic", "Amount": 1 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "OneHandedWeapon", "Bow", "TwoHandedWeapon", "TwoHandedWeaponLeft", "Torch", "Tool" ],
+      "Rarity": "Legendary",
+      "Cost": [
+        { "Item": "ShardLegendary",   "Amount": 1 },
+        { "Item": "Eitr",    "Amount": 1 },
+        { "Item": "EssenceLegendary", "Amount": 1 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "Shield", "Helmet", "Chest", "Legs", "Shoulder", "Utility" ],
+      "Rarity": "Magic",
+      "Cost": [
+        { "Item": "ShardMagic",   "Amount": 1 },
+        { "Item": "GreydwarfEye",    "Amount": 1 },
+        { "Item": "ReagentMagic", "Amount": 1 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "Shield", "Helmet", "Chest", "Legs", "Shoulder", "Utility" ],
+      "Rarity": "Rare",
+      "Cost": [
+        { "Item": "ShardRare",   "Amount": 1 },
+        { "Item": "Root",    "Amount": 1 },
+        { "Item": "ReagentRare", "Amount": 1 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "Shield", "Helmet", "Chest", "Legs", "Shoulder", "Utility" ],
+      "Rarity": "Epic",
+      "Cost": [
+        { "Item": "ShardEpic",   "Amount": 1 },
+        { "Item": "GoblinTotem",    "Amount": 1 },
+        { "Item": "ReagentEpic", "Amount": 1 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "Shield", "Helmet", "Chest", "Legs", "Shoulder", "Utility" ],
+      "Rarity": "Legendary",
+      "Cost": [
+        { "Item": "ShardLegendary",   "Amount": 1 },
+        { "Item": "Eitr",    "Amount": 1 },
+        { "Item": "ReagentLegendary", "Amount": 1 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "OneHandedWeapon", "Bow", "TwoHandedWeapon", "TwoHandedWeaponLeft", "Torch", "Tool" ],
+      "Rarity": "Rare",
+      "Cost": [
+        { "Item": "ShardRare",   "Amount": 1 },
+        { "Item": "FreezeGland",    "Amount": 1 },
+        { "Item": "EssenceRare", "Amount": 1 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "Shield", "Helmet", "Chest", "Legs", "Shoulder", "Utility" ],
+      "Rarity": "Rare",
+      "Cost": [
+        { "Item": "ShardRare",   "Amount": 1 },
+        { "Item": "FreezeGland",    "Amount": 1 },
+        { "Item": "ReagentRare", "Amount": 1 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "OneHandedWeapon", "Bow", "TwoHandedWeapon", "TwoHandedWeaponLeft", "Torch", "Tool" ],
+      "Rarity": "Epic",
+      "Cost": [
+        { "Item": "ShardEpic",   "Amount": 1 },
+        { "Item": "DragonTear",    "Amount": 1 },
+        { "Item": "EssenceEpic", "Amount": 1 }
+      ]
+    },
+    {
+      "ItemTypes" : [ "Shield", "Helmet", "Chest", "Legs", "Shoulder", "Utility" ],
+      "Rarity": "Epic",
+      "Cost": [
+        { "Item": "ShardEpic",   "Amount": 1 },
+        { "Item": "DragonTear",    "Amount": 1 },
+        { "Item": "ReagentEpic", "Amount": 1 }
+      ]
+    }
+  ]
+	  },
+  //rewrite re-augment costs
+	  {
+		"Path": "$.ReAugmentCosts",
+		"Action": "Overwrite",
+		"Value":
+[
+    { "Item": "Thunderstone", "Amount": 1 },
+    { "Item": "Thunderstone", "Amount": 2 },
+    { "Item": "Thunderstone", "Amount": 3 },
+    { "Item": "Thunderstone", "Amount": 4 },
+    { "Item": "Thunderstone", "Amount": 5 },
+    { "Item": "Thunderstone", "Amount": 6 },
+    { "Item": "Thunderstone", "Amount": 7 },
+    { "Item": "Thunderstone", "Amount": 8 },
+    { "Item": "Thunderstone", "Amount": 9 }
+  ]
+	  }
+  ]
+}

@@ -1,0 +1,1603 @@
+{
+  "TargetFile": "magiceffects.json", 
+  "Author": "Stellarwhims",
+  "Priority": 500,
+  "RequireAll": true, 
+  "Patches": [
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDamage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyPhysicalDamage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyPhysicalDamage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_lantern"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyElementalDamage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyElementalDamage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_lantern"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDurability')].Requirements.AllowedRarities",
+		"Action": "Append",
+		"Value": "Legendary"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDurability')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 50, "MaxValue" : 100, "Increment" : 5 },
+        "Rare" : { "MinValue" : 50, "MaxValue" : 100, "Increment" : 5 },
+        "Epic" : { "MinValue" : 50, "MaxValue" : 100, "Increment" : 5 },
+        "Legendary" : { "MinValue" : 50, "MaxValue" : 100, "Increment" : 5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ReduceWeight')].Requirements.AllowedRarities",
+		"Action": "Append",
+		"Value": "Legendary"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ReduceWeight')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 20, "MaxValue" : 50, "Increment" : 5 },
+        "Rare" : { "MinValue" : 20, "MaxValue" : 50, "Increment" : 5 },
+        "Epic" : { "MinValue" : 20, "MaxValue" : 50, "Increment" : 5 },
+        "Legendary" : { "MinValue" : 20, "MaxValue" : 50, "Increment" : 5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyBlockPower')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ItemHasNoParryPower",
+		"Value":true
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyBlockPower')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyParry')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+  //this is so ModifyArmor will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyArmor')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyArmor')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyArmor')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyBackstab')].Requirements.AllowedSkillTypes",
+		"Action": "Append",
+		"Value": "Crossbows"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyBackstab')].Requirements",
+		"Action": "Add",
+		"PropertyName": "AllowedRarities",
+		"Value":[
+          "Epic",
+          "Legendary"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyBackstab')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        //"Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        //"Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        "Epic" : { "MinValue" : 1, "MaxValue" : 5, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 3, "MaxValue" : 12, "Increment" : 1 }
+      }
+	  },
+  //this is so IncreaseHealth will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'IncreaseHealth')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'IncreaseHealth')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'IncreaseHealth')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 5, "MaxValue" : 10, "Increment" : 2 },
+        "Rare" : { "MinValue" : 7, "MaxValue" : 15, "Increment" : 2 },
+        "Epic" : { "MinValue" : 9, "MaxValue" : 20, "Increment" : 2 },
+        "Legendary" : { "MinValue" : 11, "MaxValue" : 25, "Increment" : 2 }
+      }
+	  },
+  //this is so IncreaseStamina will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'IncreaseStamina')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'IncreaseStamina')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'IncreaseStamina')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 5, "MaxValue" : 10, "Increment" : 2 },
+        "Rare" : { "MinValue" : 7, "MaxValue" : 15, "Increment" : 2 },
+        "Epic" : { "MinValue" : 9, "MaxValue" : 20, "Increment" : 2 },
+        "Legendary" : { "MinValue" : 11, "MaxValue" : 25, "Increment" : 2 }
+      }
+	  },
+  //this is so IncreaseEitr will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'IncreaseEitr')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch. also added staves because magic!
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'IncreaseEitr')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'IncreaseEitr')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Epic" : { "MinValue" : 1, "MaxValue" : 5, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 3, "MaxValue" : 12, "Increment" : 1 }
+      }
+	  },
+  //this is so ModifyHealthRegen will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyHealthRegen')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyHealthRegen')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyHealthRegen')].Requirements",
+		"Action": "Add",
+		"PropertyName": "AllowedRarities",
+		"Value":[
+          "Legendary"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyHealthRegen')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        //"Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        //"Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        //"Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 1, "MaxValue" : 6, "Increment" : 1 }
+      }
+	  },
+  //this is so AddHealthRegen will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddHealthRegen')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddHealthRegen')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddHealthRegen')].Requirements",
+		"Action": "Add",
+		"PropertyName": "AllowedRarities",
+		"Value":[
+          "Legendary"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddHealthRegen')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        //"Magic" : { "MinValue" : 0.5, "MaxValue" : 1.5, "Increment" : 0.5 },
+        //"Rare" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        //"Epic" : { "MinValue" : 2, "MaxValue" : 4.5, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 0.5, "MaxValue" : 3, "Increment" : 0.5 }
+      }
+	  },
+  //this is so ModifyStaminaRegen will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyStaminaRegen')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyStaminaRegen')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyStaminaRegen')].Requirements",
+		"Action": "Add",
+		"PropertyName": "AllowedRarities",
+		"Value":[
+          "Legendary"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyStaminaRegen')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        //"Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        //"Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        //"Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 1, "MaxValue" : 6, "Increment" : 1 }
+      }
+	  },
+  //this is so ModifyEitrRegen will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyEitrRegen')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyEitrRegen')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyEitrRegen')].Requirements.AllowedRarities",
+		"Action": "Overwrite",
+		"Value":[
+          //"Epic",
+          "Legendary"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyEitrRegen')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        //"Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 1, "MaxValue" : 6, "Increment" : 1 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddBluntDamage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_lantern"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddBluntDamage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddSlashingDamage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_lantern"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddSlashingDamage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPiercingDamage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_lantern"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPiercingDamage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddFireDamage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_lantern"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddFireDamage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddFrostDamage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_lantern"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddFrostDamage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddLightningDamage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_lantern"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddLightningDamage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPoisonDamage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_lantern"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPoisonDamage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddSpiritDamage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_lantern"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddSpiritDamage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+  //remove fire resistance
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddFireResistance')].Requirements.AllowedItemTypes",
+		"Action": "Overwrite",
+		"Value": []
+	  },
+  //remove frost resistance
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddFrostResistance')].Requirements.AllowedItemTypes",
+		"Action": "Overwrite",
+		"Value": []
+	  },
+  //remove lightning resistance
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddLightningResistance')].Requirements.AllowedItemTypes",
+		"Action": "Overwrite",
+		"Value": []
+	  },
+  //remove poison resistance
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPoisonResistance')].Requirements.AllowedItemTypes",
+		"Action": "Overwrite",
+		"Value": []
+	  },
+  //remove spirit resistance
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddSpiritResistance')].Requirements.AllowedItemTypes",
+		"Action": "Overwrite",
+		"Value": []
+	  },
+  //this is so AddFireResistancePercentage will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddFireResistancePercentage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddFireResistancePercentage')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddFireResistancePercentage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+  //this is so AddFrostResistancePercentage will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddFrostResistancePercentage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddFrostResistancePercentage')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddFrostResistancePercentage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+  //this is so AddLightningResistancePercentage will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddLightningResistancePercentage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddLightningResistancePercentage')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddLightningResistancePercentage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+  //this is so AddPoisonResistancePercentage will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPoisonResistancePercentage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPoisonResistancePercentage')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPoisonResistancePercentage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+  //remove spirit resistance percentage
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddSpiritResistancePercentage')].Requirements.AllowedItemTypes",
+		"Action": "Overwrite",
+		"Value": []
+	  },
+  //this is so AddElementalResistancePercentage will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddElementalResistancePercentage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddElementalResistancePercentage')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddElementalResistancePercentage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+  //this is so AddBluntResistancePercentage will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddBluntResistancePercentage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddBluntResistancePercentage')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddBluntResistancePercentage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+  //this is so AddSlashingResistancePercentage will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddSlashingResistancePercentage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddSlashingResistancePercentage')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddSlashingResistancePercentage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+  //this is so AddPiercingResistancePercentage will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPiercingResistancePercentage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPiercingResistancePercentage')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPiercingResistancePercentage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+  //remove chopping resistance percentage
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddChoppingResistancePercentage')].Requirements.AllowedItemTypes",
+		"Action": "Overwrite",
+		"Value": []
+	  },
+  //this is so AddPhysicalResistancePercentage will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPhysicalResistancePercentage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPhysicalResistancePercentage')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPhysicalResistancePercentage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+  //this is so ModifyMovementSpeed will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyMovementSpeed')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyMovementSpeed')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyMovementSpeed')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+  //this is so ModifySprintStaminaUse will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifySprintStaminaUse')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifySprintStaminaUse')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifySprintStaminaUse')].Requirements",
+		"Action": "Add",
+		"PropertyName": "AllowedRarities",
+		"Value":[
+          "Legendary"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifySprintStaminaUse')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        //"Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        //"Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        //"Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 1, "MaxValue" : 6, "Increment" : 1 }
+      }
+	  },
+  //this is so ModifyJumpStaminaUse will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyJumpStaminaUse')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyJumpStaminaUse')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyJumpStaminaUse')].Requirements",
+		"Action": "Add",
+		"PropertyName": "AllowedRarities",
+		"Value":[
+          "Legendary"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyJumpStaminaUse')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        //"Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        //"Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        //"Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 1, "MaxValue" : 6, "Increment" : 1 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackStaminaUse')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_lantern"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackStaminaUse')].Requirements",
+		"Action": "Add",
+		"PropertyName": "AllowedRarities",
+		"Value":[
+          "Legendary"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackStaminaUse')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        //"Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        //"Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        //"Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 1, "MaxValue" : 6, "Increment" : 1 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyBlockStaminaUse')].Requirements",
+		"Action": "Add",
+		"PropertyName": "AllowedRarities",
+		"Value":[
+          "Legendary"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyBlockStaminaUse')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        //"Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        //"Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        //"Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 1, "MaxValue" : 6, "Increment" : 1 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'Indestructible')].Requirements.ExclusiveEffectTypes",
+		"Action": "Overwrite",
+		"Value": []
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'Indestructible')].Requirements.AllowedItemTypes",
+		"Action": "Overwrite",
+		"Value": []
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'Indestructible')].Requirements.AllowedRarities",
+		"Action": "Overwrite",
+		"Value": []
+	  },
+  //this is so AddCarryWeight will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddCarryWeight')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddCarryWeight')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackSpeed')].Requirements.AllowedItemTypes",
+		"Action": "Overwrite",
+		"Value":[
+          "OneHandedWeapon",
+          "TwoHandedWeapon",
+          "TwoHandedWeaponLeft"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackSpeed')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'Paralyze')].Requirements.AllowedItemTypes",
+		"Action": "Overwrite",
+		"Value": []
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'Paralyze')].Requirements.ExcludedSkillTypes",
+		"Action": "Overwrite",
+		"Value": []
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'QuickDraw')].Requirements.ExcludedSkillTypes",
+		"Action": "Append",
+		"Value": "Crossbows"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'QuickDraw')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddSwordsSkill')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddKnivesSkill')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddClubsSkill')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_lantern"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddClubsSkill')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPolearmsSkill')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddSpearsSkill')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddBlockingSkill')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ItemHasNoParryPower",
+		"Value":true
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddBlockingSkill')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ItemHasBlockPower",
+		"Value":true
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddBlockingSkill')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddAxesSkill')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddBowsSkill')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+  //this is so AddBloodMagicSkill will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddBloodMagicSkill')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddBloodMagicSkill')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddBloodMagicSkill')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+  //this is so AddElementalMagicSkill will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddElementalMagicSkill')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddElementalMagicSkill')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddElementalMagicSkill')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddUnarmedSkill')].Requirements.AllowedItemTypes",
+		"Action": "Overwrite",
+		"Value": []
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddUnarmedSkill')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        //"Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        //"Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        //"Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 1, "MaxValue" : 12, "Increment" : 1 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPickaxesSkill')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+  //this is so AddMovementSkills will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddMovementSkills')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddMovementSkills')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddMovementSkills')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyStaggerDuration')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 2, "Increment" : 1 },
+        "Rare" : { "MinValue" : 3, "MaxValue" : 4, "Increment" : 1 },
+        "Epic" : { "MinValue" : 5, "MaxValue" : 6, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 8, "Increment" : 1 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'QuickLearner')].Requirements",
+		"Action": "Add",
+		"PropertyName": "AllowedRarities",
+		"Value":[
+          "Legendary"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'QuickLearner')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        //"Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        //"Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        //"Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 1, "MaxValue" : 6, "Increment" : 1 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'FreeBuild')].Requirements.AllowedItemNames",
+		"Action": "Overwrite",
+		"Value": []
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'FreeBuild')].Requirements.AllowedRarities",
+		"Action": "Overwrite",
+		"Value": []
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'RecallWeapon')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_spear_chitin"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ReflectDamage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AvoidDamageTaken')].Requirements.AllowedItemTypes",
+		"Action": "Overwrite",
+		"Value":[
+          "Legs"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AvoidDamageTaken')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'StaggerOnDamageTaken')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 2, "Increment" : 1 },
+        "Rare" : { "MinValue" : 3, "MaxValue" : 4, "Increment" : 1 },
+        "Epic" : { "MinValue" : 5, "MaxValue" : 6, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 8, "Increment" : 1 }
+      }
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'FeatherFall')].Requirements.AllowedItemTypes",
+		"Action": "Overwrite",
+		"Value":[]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'FeatherFall')].Requirements",
+		"Action": "Add",
+		"PropertyName": "NoRoll",
+		"Value": true
+	  },
+  //this is so ModifyMovementSpeedLowHealth will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyMovementSpeedLowHealth')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyMovementSpeedLowHealth')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+  //this is so ModifyHealthRegenLowHealth will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyHealthRegenLowHealth')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyHealthRegenLowHealth')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyHealthRegenLowHealth')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+	  }
+      },
+  //this is so ModifyStaminaRegenLowHealth will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyStaminaRegenLowHealth')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyStaminaRegenLowHealth')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyStaminaRegenLowHealth')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 0.5 },
+        "Rare" : { "MinValue" : 2, "MaxValue" : 6, "Increment" : 0.5 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 9, "Increment" : 0.5 },
+        "Legendary" : { "MinValue" : 7, "MaxValue" : 12, "Increment" : 0.5 }
+	  }
+      },
+  //this is so ModifyEitrRegenLowHealth will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyEitrRegenLowHealth')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyEitrRegenLowHealth')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyEitrRegenLowHealth')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 10, "MaxValue" : 12, "Increment" : 1 }
+	  }
+      },
+  //this is so ModifyArmorLowHealth will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyArmorLowHealth')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyArmorLowHealth')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyArmorLowHealth')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        "Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        "Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 10, "MaxValue" : 12, "Increment" : 1 }
+	  }
+      },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDamageLowHealth')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        "Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        "Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 10, "MaxValue" : 12, "Increment" : 1 }
+	  }
+      },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyBlockPowerLowHealth')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ItemHasNoParryPower",
+		"Value":true
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyBlockPowerLowHealth')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        "Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        "Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 10, "MaxValue" : 12, "Increment" : 1 }
+	  }
+      },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyParryLowHealth')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        "Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        "Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 10, "MaxValue" : 12, "Increment" : 1 }
+	  }
+      },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackSpeedLowHealth')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        "Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        "Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 10, "MaxValue" : 12, "Increment" : 1 }
+	  }
+      },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'AvoidDamageTakenLowHealth')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        "Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        "Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 10, "MaxValue" : 12, "Increment" : 1 }
+	  }
+      },
+  //this is so Riches will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'Riches')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'Riches')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'Opportunist')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Rare" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        "Epic" : { "MinValue" : 4, "MaxValue" : 5, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 6, "MaxValue" : 8, "Increment" : 1 }
+	  }
+      },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'Duelist')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 10, "Increment" : 1 },
+        "Rare" : { "MinValue" : 11, "MaxValue" : 20, "Increment" : 1 },
+        "Epic" : { "MinValue" : 21, "MaxValue" : 30, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 31, "MaxValue" : 40, "Increment" : 1 }
+	  }
+      },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyStaggerDamage')].Requirements",
+		"Action": "Add",
+		"PropertyName": "AllowedRarities",
+		"Value":[
+          "Legendary"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyStaggerDamage')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        //"Magic" : { "MinValue" : 1, "MaxValue" : 2, "Increment" : 1 },
+        //"Rare" : { "MinValue" : 3, "MaxValue" : 4, "Increment" : 1 },
+        //"Epic" : { "MinValue" : 5, "MaxValue" : 6, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 1, "MaxValue" : 6, "Increment" : 1 }
+	  }
+      },
+  //this is so Riches will apply to lanterns, but not torches
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'Luck')].Requirements",
+		"Action": "Add",
+		"PropertyName": "ExcludedItemNames",
+		"Value":[
+          "$item_torch",
+          "$item_torchmist"
+        ]
+	  },
+  //a lantern is a torch ...
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'Luck')].Requirements.AllowedItemTypes",
+		"Action": "Append",
+		"Value": "Torch"
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'Luck')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 1, "MaxValue" : 3, "Increment" : 1 },
+        "Rare" : { "MinValue" : 4, "MaxValue" : 6, "Increment" : 1 },
+        "Epic" : { "MinValue" : 7, "MaxValue" : 9, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 10, "MaxValue" : 12, "Increment" : 1 }
+	  }
+      },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyParryWindow')].Requirements",
+		"Action": "Add",
+		"PropertyName": "AllowedRarities",
+		"Value":[
+          "Legendary"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyParryWindow')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        //"Magic" : { "MinValue" : 1, "MaxValue" : 2, "Increment" : 1 },
+        //"Rare" : { "MinValue" : 3, "MaxValue" : 4, "Increment" : 1 },
+        //"Epic" : { "MinValue" : 5, "MaxValue" : 6, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 20, "MaxValue" : 60, "Increment" : 1 }
+	  }
+      },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'Slow')].ValuesPerRarity",
+		"Action": "Overwrite",
+		"Value":{
+        "Magic" : { "MinValue" : 15, "MaxValue" : 20, "Increment" : 1 },
+        "Rare" : { "MinValue" : 20, "MaxValue" : 25, "Increment" : 1 },
+        "Epic" : { "MinValue" : 25, "MaxValue" : 30, "Increment" : 1 },
+        "Legendary" : { "MinValue" : 30, "MaxValue" : 35, "Increment" : 1 }
+	  }
+      },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'DoubleMagicShot')].Requirements.AllowedRarities",
+		"Action": "Overwrite",
+		"Value":[
+          "Legendary"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'TripleBowShot')].Requirements.AllowedRarities",
+		"Action": "Overwrite",
+		"Value":[
+          "Legendary"
+        ]
+	  },
+	  {
+		"Path": "$.MagicItemEffects[?(@.Type == 'TripleBowShot')].Requirements",
+		"Action": "Add",
+		"PropertyName":"ExcludedSkillTypes",
+		"Value":[
+          "Crossbows"
+        ]
+	  },
+  ]
+}
