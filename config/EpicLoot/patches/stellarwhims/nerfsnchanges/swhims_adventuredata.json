@@ -40,12 +40,12 @@
 	"Value": [1, 1, 1, 1, 0]
 	},
 	{
-		"Path": "$.SecretStash.GambleRarityChance",
+		"Path": "$.Gamble.GambleRarityChance",
 		"Action": "Overwrite",
 		"Value": [ 10, 68, 15, 4, 2, 0 ]
 	},
 	{
-		"Path": "$.SecretStash.GambleRarityChanceByRarity",
+		"Path": "$.Gamble.GambleRarityChanceByRarity",
 		"Action": "Overwrite",
 		"Value": 
 		[

@@ -898,12 +898,6 @@
           "$item_torchmist"
         ]
 	  },
-  //a lantern is a torch ...
-	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'AddBloodMagicSkill')].Requirements.AllowedItemTypes",
-		"Action": "Append",
-		"Value": "Torch"
-	  },
   //this is so AddElementalMagicSkill will apply to lanterns, but not torches
 	  {
 		"Path": "$.MagicItemEffects[?(@.Type == 'AddElementalMagicSkill')].Requirements",
@@ -913,12 +907,6 @@
           "$item_torch",
           "$item_torchmist"
         ]
-	  },
-  //a lantern is a torch ...
-	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'AddElementalMagicSkill')].Requirements.AllowedItemTypes",
-		"Action": "Append",
-		"Value": "Torch"
 	  },
   //this is so AddMovementSkills will apply to lanterns, but not torches
 	  {
