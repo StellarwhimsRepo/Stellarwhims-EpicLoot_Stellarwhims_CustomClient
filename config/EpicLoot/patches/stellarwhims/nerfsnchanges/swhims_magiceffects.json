@@ -312,8 +312,9 @@
 		"Value": "Torch"
 	  },
 	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyEitrRegen')].Requirements.AllowedRarities",
-		"Action": "Overwrite",
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyEitrRegen')].Requirements",
+		"Action": "Add",
+		"PropertyName": "AllowedRarities",
 		"Value":[
           "Legendary",
 		  "Mythic"
