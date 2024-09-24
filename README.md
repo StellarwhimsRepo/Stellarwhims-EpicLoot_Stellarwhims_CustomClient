@@ -16,6 +16,8 @@ Removed bows from attack speed effect.
 
 Recipes to build trophies have been removed.
 
+Mythic crafting knowledge has been lost to the ages ...
+
 Keep an eye on the patch notes as this description is more of a general guideline.
 
 # Eitr and other items integration
@@ -36,16 +38,22 @@ The json priority set on the files is left at a default of 500.
  
 ## Changelog
 
-2.0.1
+2.0.2
 
-		- tuned drops for vanilla difficulty
-		- added Azus_UnOfficial_ConfigManager to dependencies
-		- added tweaked config for Epic Loot
+		- updated for latest epicloot release 0.10.3
+		- some now redundant balance changes removed
+		- epicloot config file changes
 
 <details>
   <summary>
     Previous changes:
   </summary>
+
+		2.0.1
+
+				- tuned drops for vanilla difficulty
+				- added Azus_UnOfficial_ConfigManager to dependencies
+				- added tweaked config for Epic Loot
 
 		2.0.0
 

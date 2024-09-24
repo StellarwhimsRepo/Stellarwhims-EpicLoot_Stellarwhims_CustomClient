@@ -1,7 +1,7 @@
 {
 	"name": "EpicLoot_Stellarwhims_CustomClient",
 	"author": "Stellarwhims",
-	"description": "Updated loot tables, damage, and effects that focus enchanting materials and encourage progression. Some vanilla block, parry, health, stamina values are preserved.",
+	"description": "Updated loot tables, damage, and effects that focus enchanting materials and encourage progression. Read the change notes.",
 	"version_number": "2.0.2",
 	"website_url": "",
 	"dependencies": [
