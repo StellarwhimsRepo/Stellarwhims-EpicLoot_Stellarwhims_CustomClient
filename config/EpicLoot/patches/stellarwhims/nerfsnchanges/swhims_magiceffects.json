@@ -5,20 +5,14 @@
   "RequireAll": true, 
   "Patches": [
 	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyPhysicalDamage')].Requirements",
-		"Action": "Add",
-		"PropertyName": "ExcludedItemNames",
-		"Value":[
-          "$item_lantern"
-        ]
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyPhysicalDamage')].Requirements.ExcludedItemNames",
+		"Action": "Append",
+		"Value": "$item_lantern"
 	  },
 	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyElementalDamage')].Requirements",
-		"Action": "Add",
-		"PropertyName": "ExcludedItemNames",
-		"Value":[
-          "$item_lantern"
-        ]
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyElementalDamage')].Requirements.ExcludedItemNames",
+		"Action": "Append",
+		"Value": "$item_lantern"
 	  },
 	  {
 		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDurability')].Requirements.AllowedRarities",
@@ -182,9 +176,8 @@
 	  },
   //this is so IncreaseEitr will apply to lanterns, but not torches
 	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'IncreaseEitr')].Requirements",
-		"Action": "Add",
-		"PropertyName": "ExcludedItemNames",
+		"Path": "$.MagicItemEffects[?(@.Type == 'IncreaseEitr')].Requirements.ExcludedItemNames",
+		"Action": "AppendAll",
 		"Value":[
           "$item_torch",
           "$item_torchmist"
@@ -297,9 +290,8 @@
 	  },
   //this is so ModifyEitrRegen will apply to lanterns, but not torches
 	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyEitrRegen')].Requirements",
-		"Action": "Add",
-		"PropertyName": "ExcludedItemNames",
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyEitrRegen')].Requirements.ExcludedItemNames",
+		"Action": "AppendAll",
 		"Value":[
           "$item_torch",
           "$item_torchmist"
@@ -329,68 +321,44 @@
       }
 	  },
 	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'AddBluntDamage')].Requirements",
-		"Action": "Add",
-		"PropertyName": "ExcludedItemNames",
-		"Value":[
-          "$item_lantern"
-        ]
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddBluntDamage')].Requirements.ExcludedItemNames",
+		"Action": "Append",
+		"Value": "$item_lantern"
 	  },
 	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'AddSlashingDamage')].Requirements",
-		"Action": "Add",
-		"PropertyName": "ExcludedItemNames",
-		"Value":[
-          "$item_lantern"
-        ]
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddSlashingDamage')].Requirements.ExcludedItemNames",
+		"Action": "Append",
+		"Value": "$item_lantern"
 	  },
 	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'AddPiercingDamage')].Requirements",
-		"Action": "Add",
-		"PropertyName": "ExcludedItemNames",
-		"Value":[
-          "$item_lantern"
-        ]
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPiercingDamage')].Requirements.ExcludedItemNames",
+		"Action": "Append",
+		"Value": "$item_lantern"
 	  },
 	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'AddFireDamage')].Requirements",
-		"Action": "Add",
-		"PropertyName": "ExcludedItemNames",
-		"Value":[
-          "$item_lantern"
-        ]
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddFireDamage')].Requirements.ExcludedItemNames",
+		"Action": "Append",
+		"Value": "$item_lantern"
 	  },
 	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'AddFrostDamage')].Requirements",
-		"Action": "Add",
-		"PropertyName": "ExcludedItemNames",
-		"Value":[
-          "$item_lantern"
-        ]
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddFrostDamage')].Requirements.ExcludedItemNames",
+		"Action": "Append",
+		"Value": "$item_lantern"
 	  },
 	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'AddLightningDamage')].Requirements",
-		"Action": "Add",
-		"PropertyName": "ExcludedItemNames",
-		"Value":[
-          "$item_lantern"
-        ]
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddLightningDamage')].Requirements.ExcludedItemNames",
+		"Action": "Append",
+		"Value": "$item_lantern"
 	  },
 	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'AddPoisonDamage')].Requirements",
-		"Action": "Add",
-		"PropertyName": "ExcludedItemNames",
-		"Value":[
-          "$item_lantern"
-        ]
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddPoisonDamage')].Requirements.ExcludedItemNames",
+		"Action": "Append",
+		"Value": "$item_lantern"
 	  },
 	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'AddSpiritDamage')].Requirements",
-		"Action": "Add",
-		"PropertyName": "ExcludedItemNames",
-		"Value":[
-          "$item_lantern"
-        ]
+		"Path": "$.MagicItemEffects[?(@.Type == 'AddSpiritDamage')].Requirements.ExcludedItemNames",
+		"Action": "Append",
+		"Value": "$item_lantern"
 	  },
   //remove fire resistance
 	  {
@@ -771,12 +739,9 @@
 		}
 	  },
 	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackStaminaUse')].Requirements",
-		"Action": "Add",
-		"PropertyName": "ExcludedItemNames",
-		"Value":[
-          "$item_lantern"
-        ]
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackStaminaUse')].Requirements.ExcludedItemNames",
+		"Action": "Append",
+		"Value": "$item_lantern"
 	  },
 	  {
 		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackStaminaUse')].Requirements",
@@ -1073,9 +1038,8 @@
       },
   //this is so ModifyEitrRegenLowHealth will apply to lanterns, but not torches
 	  {
-		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyEitrRegenLowHealth')].Requirements",
-		"Action": "Add",
-		"PropertyName": "ExcludedItemNames",
+		"Path": "$.MagicItemEffects[?(@.Type == 'ModifyEitrRegenLowHealth')].Requirements.ExcludedItemNames",
+		"Action": "AppendAll",
 		"Value":[
           "$item_torch",
           "$item_torchmist"
