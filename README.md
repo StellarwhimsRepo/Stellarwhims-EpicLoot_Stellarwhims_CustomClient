@@ -43,6 +43,7 @@ The json priority set on the files is left at a default of 500.
 		- updated for latest epicloot release 0.10.3
 		- some now redundant balance changes removed
 		- epicloot config file changes
+		- added MainStreetGaming-BetterDiving-1.1.0 to dependencies
 
 <details>
   <summary>
