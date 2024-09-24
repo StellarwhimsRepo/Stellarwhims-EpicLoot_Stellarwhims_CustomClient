@@ -51,7 +51,8 @@
 		"Value": [ { "Item": "EssenceMagic", "Amount":1 } ]
 	  },
   //Ashlands trophies
-  //
+  //no updates needed for ashlands trophies. these produce ShardMythic!!
+
   //Mistlands trophies
 	  {
 		"Path": "$.DisenchantProducts..[?(@.ItemNames[0] == '$item_trophy_boar')]",

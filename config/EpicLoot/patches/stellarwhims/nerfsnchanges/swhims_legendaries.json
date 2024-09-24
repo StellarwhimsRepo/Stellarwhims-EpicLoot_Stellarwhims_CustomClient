@@ -8,35 +8,35 @@
 		"Path": "$.LegendaryItems[?(@.ID == 'Skofnung')].GuaranteedMagicEffects",
 		"Action": "Overwrite",
 		"Value": [
-        { "Type": "AddSlashingDamage", "Values": { "MinValue" : 30, "MaxValue" : 35, "Increment" : 1 } },
-        { "Type": "ModifyAttackStaminaUse", "Values": { "MinValue" : 25, "MaxValue" : 30, "Increment" : 1 } },
-        { "Type": "ModifyAttackSpeed", "Values": { "MinValue" : 20, "MaxValue" : 25, "Increment" : 1 } }
-      ]
+      { "Type": "AddSlashingDamage" },
+      { "Type": "ModifyAttackStaminaUse" },
+      { "Type": "ModifyAttackSpeed" }
+    ]
 	  },
 	  {
 		"Path": "$.LegendaryItems[?(@.ID == 'Hofund')].GuaranteedMagicEffects",
 		"Action": "Overwrite",
 		"Value": [
-        { "Type": "AddSlashingDamage", "Values": { "MinValue" : 30, "MaxValue" : 35, "Increment" : 1 } },
-        { "Type": "ModifyAttackStaminaUse", "Values": { "MinValue" : 25, "MaxValue" : 30, "Increment" : 1 } },
-        { "Type": "LifeSteal", "Values": { "MinValue" : 4, "MaxValue" : 4.5, "Increment" : 0.1 } }
-      ]
+      { "Type": "AddSlashingDamage" },
+      { "Type": "ModifyAttackStaminaUse" },
+      { "Type": "LifeSteal" }
+    ]
 	  },
 	  {
 		"Path": "$.LegendaryItems[?(@.ID == 'UllrBow')].GuaranteedMagicEffects",
 		"Action": "Overwrite",
 		"Value": [
-        { "Type": "ExplosiveArrows", "Values": { "MinValue" : 35, "MaxValue" : 40, "Increment" : 1 } },
-        { "Type": "AddFrostDamage", "Values": { "MinValue" : 6, "MaxValue" : 10, "Increment" : 1 } }
-      ]
+      { "Type": "ExplosiveArrows" },
+      { "Type": "AddFrostDamage" }
+    ]
 	  },
 	  {
 		"Path": "$.LegendaryItems[?(@.ID == 'EndlessBow')].GuaranteedMagicEffects",
 		"Action": "Overwrite",
 		"Value": [
-        { "Type": "QuickDraw", "Values": { "MinValue" : 25, "MaxValue" : 35, "Increment" : 1 } },
-        { "Type": "ModifyAttackStaminaUse", "Values": { "MinValue" : 17, "MaxValue" : 20, "Increment" : 1 } }
-      ]
+      { "Type": "QuickDraw" },
+      { "Type": "ModifyAttackStaminaUse" }
+    ]
 	  }
   ]
 }

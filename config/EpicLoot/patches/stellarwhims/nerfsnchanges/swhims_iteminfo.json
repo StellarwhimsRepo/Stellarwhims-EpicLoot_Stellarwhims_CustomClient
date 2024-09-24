@@ -18,7 +18,7 @@
 	  {
 		"Path": "$.ItemInfo[?(@.Type == 'Clubs')].Items",
 		"Action": "Overwrite",
-		"Value": [ "Club", "MaceBronze", "MaceIron", "MaceNeedle" ]
+		"Value": [ "Club", "MaceBronze", "MaceIron", "MaceNeedle", "MaceEldner" ]
 	  },
 	  {
 		"Path": "$.ItemInfo[?(@.Type == 'Clubs')].ItemsByBoss.defeated_dragon",
@@ -28,73 +28,77 @@
 	  {
 		"Path": "$.ItemInfo[?(@.Type == 'ChestArmor')].Items",
 		"Action": "Overwrite",
-		"Value": [ "ArmorRagsChest", "ArmorLeatherChest", "ArmorBronzeChest", "ArmorIronChest", "ArmorWolfChest", "ArmorPaddedCuirass", "ArmorCarapaceChest", "ArmorMageChest" ]
+		"Value": [ "ArmorRagsChest", "ArmorLeatherChest", "ArmorBronzeChest", "ArmorIronChest", "ArmorWolfChest", "ArmorPaddedCuirass", "ArmorCarapaceChest", "ArmorMageChest", "ArmorFlametalChest", "ArmorAshlandsMediumChest", "ArmorMageChest_Ashlands" ]
 	  },
 	  {
 		"Path": "$.ItemInfo[?(@.Type == 'ChestArmor')].ItemsByBoss",
 		"Action": "Overwrite",
 		"Value": 
-{
+      {
         "defeated_eikthyr"    : [ "ArmorRagsChest", "ArmorLeatherChest" ],
         "defeated_gdking"     : [ "ArmorBronzeChest" ],
         "defeated_bonemass"   : [ "ArmorIronChest" ],
         "defeated_dragon"     : [ "ArmorWolfChest" ],
         "defeated_goblinking" : [ "ArmorPaddedCuirass" ],
-        "defeated_queen"      : [ "ArmorCarapaceChest", "ArmorMageChest" ]
+        "defeated_queen"      : [ "ArmorCarapaceChest", "ArmorMageChest" ],
+        "defeated_fader"      : [ "ArmorFlametalChest", "ArmorAshlandsMediumChest", "ArmorMageChest_Ashlands" ]
       }
 	  },
 	  {
 		"Path": "$.ItemInfo[?(@.Type == 'LegsArmor')].Items",
 		"Action": "Overwrite",
-		"Value": [ "ArmorRagsLegs", "ArmorLeatherLegs", "ArmorBronzeLegs", "ArmorIronLegs", "ArmorWolfLegs", "ArmorPaddedGreaves", "ArmorCarapaceLegs", "ArmorMageLegs" ]
+		"Value": [ "ArmorRagsLegs", "ArmorLeatherLegs", "ArmorBronzeLegs", "ArmorIronLegs", "ArmorWolfLegs", "ArmorPaddedGreaves", "ArmorCarapaceLegs", "ArmorMageLegs", "ArmorFlametalLegs", "ArmorAshlandsMediumlegs", "ArmorMageLegs_Ashlands" ]
 	  },
 	  {
 		"Path": "$.ItemInfo[?(@.Type == 'LegsArmor')].ItemsByBoss",
 		"Action": "Overwrite",
 		"Value": 
-{
+      {
         "defeated_eikthyr"    : [ "ArmorRagsLegs", "ArmorLeatherLegs" ],
         "defeated_gdking"     : [ "ArmorBronzeLegs" ],
         "defeated_bonemass"   : [ "ArmorIronLegs" ],
         "defeated_dragon"     : [ "ArmorWolfLegs" ],
         "defeated_goblinking" : [ "ArmorPaddedGreaves" ],
-        "defeated_queen"      : [ "ArmorCarapaceLegs", "ArmorMageLegs" ]
+        "defeated_queen"      : [ "ArmorCarapaceLegs", "ArmorMageLegs" ],
+        "defeated_fader"      : [ "ArmorFlametalLegs", "ArmorAshlandsMediumlegs", "ArmorMageLegs_Ashlands" ]
       }
 	  },
 	  {
 		"Path": "$.ItemInfo[?(@.Type == 'HeadArmor')].Items",
 		"Action": "Overwrite",
-		"Value": [ "HelmetLeather", "HelmetBronze", "HelmetIron", "HelmetDrake", "HelmetPadded", "HelmetCarapace", "HelmetMage" ]
+		"Value": [ "HelmetLeather", "HelmetBronze", "HelmetIron", "HelmetDrake", "HelmetPadded", "HelmetCarapace", "HelmetMage", "HelmetFlametal", "HelmetAshlandsMediumHood", "HelmetMage_Ashlands" ]
 	  },
 	  {
 		"Path": "$.ItemInfo[?(@.Type == 'HeadArmor')].ItemsByBoss",
 		"Action": "Overwrite",
 		"Value": 
-{
+      {
         "defeated_eikthyr"    : [ "HelmetLeather" ],
         "defeated_gdking"     : [ "HelmetBronze" ],
         "defeated_bonemass"   : [ "HelmetIron" ],
         "defeated_dragon"     : [ "HelmetDrake" ],
         "defeated_goblinking" : [ "HelmetPadded" ],
-        "defeated_queen"      : [ "HelmetCarapace", "HelmetMage" ]
+        "defeated_queen"      : [ "HelmetCarapace", "HelmetMage" ],
+        "defeated_fader"      : [ "HelmetFlametal", "HelmetAshlandsMediumHood", "HelmetMage_Ashlands" ]
       }
 	  },
 	  {
 		"Path": "$.ItemInfo[?(@.Type == 'ShouldersArmor')].Items",
 		"Action": "Overwrite",
-		"Value": [ "CapeDeerHide", "CapeWolf", "CapeLinen", "CapeLox", "CapeFeather" ]
+		"Value": [ "CapeDeerHide", "CapeWolf", "CapeLinen", "CapeLox", "CapeFeather", "CapeAsh", "CapeAsksvin" ]
 	  },
 	  {
 		"Path": "$.ItemInfo[?(@.Type == 'ShouldersArmor')].ItemsByBoss",
 		"Action": "Overwrite",
 		"Value": 
-{
+      {
         "defeated_eikthyr"    : [ "CapeDeerHide" ],
         "defeated_gdking"     : [  ],
         "defeated_bonemass"   : [  ],
         "defeated_dragon"     : [ "CapeWolf" ],
         "defeated_goblinking" : [ "CapeLinen", "CapeLox" ],
-        "defeated_queen"      : [ "CapeFeather" ]
+        "defeated_queen"      : [ "CapeFeather" ],
+        "defeated_fader"      : [ "CapeAsh", "CapeAsksvin" ]
       }
 	  },
   //Setup Loot & Gamble Excludes
@@ -116,7 +120,7 @@
         "defeated_queen"      : [  ]
       }
     },
-	{
+	  {
       "Type": "ClubsExcludes",
       "Fallback": "",
       "Items": [ "MaceSilver" ],

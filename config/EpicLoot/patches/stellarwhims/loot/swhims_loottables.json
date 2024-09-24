@@ -779,7 +779,8 @@
           "Loot": [
             { "Item": "Tier3Mats", "Weight": 5 },
             { "Item": "Tier3Runestone", "Weight": 5 },
-            { "Item": "Tier4Mats", "Weight": 1 },
+            { "Item": "Tier4Mats", "Weight": 3 },
+            { "Item": "Tier4Runestone", "Weight": 1 },
             { "Item": "Tier7Everything", "Weight": 1, "Rarity": [ 0, 0, 50, 30, 20 ] }
           ]
         },

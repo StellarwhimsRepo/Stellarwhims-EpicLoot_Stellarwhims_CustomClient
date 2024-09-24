@@ -5,41 +5,72 @@
   "RequireAll": true, 
   "Patches": [
   //Remove Dusts from SecretStash.Materials
-	  {
-		"Path": "$.SecretStash.Materials[?(@.Item == 'DustMagic')]",
-		"Action": "Remove"
-	  },
-	  {
-		"Path": "$.SecretStash.Materials[?(@.Item == 'DustRare')]",
-		"Action": "Remove"
-	  },
-	  {
-		"Path": "$.SecretStash.Materials[?(@.Item == 'DustEpic')]",
-		"Action": "Remove"
-	  },
-	  {
-		"Path": "$.SecretStash.Materials[?(@.Item == 'DustLegendary')]",
-		"Action": "Remove"
-	  },
-	  {
-		"Path": "$.SecretStash.Materials[?(@.Item == 'DustMythic')]",
-		"Action": "Remove"
-	  },
-  //Update TreasureMaps.BiomeInfo
-	  {
+	{
+	"Path": "$.SecretStash.Materials[?(@.Item == 'DustMagic')]",
+	"Action": "Remove"
+	},
+	{
+	"Path": "$.SecretStash.Materials[?(@.Item == 'DustRare')]",
+	"Action": "Remove"
+	},
+	{
+	"Path": "$.SecretStash.Materials[?(@.Item == 'DustEpic')]",
+	"Action": "Remove"
+	},
+	{
+	"Path": "$.SecretStash.Materials[?(@.Item == 'DustLegendary')]",
+	"Action": "Remove"
+	},
+	{
+	"Path": "$.SecretStash.Materials[?(@.Item == 'DustMythic')]",
+	"Action": "Remove"
+	},
+  //mythic finds should feel more mythic and lost to the ages
+	{
+	"Path": "$.SecretStash.Materials[?(@.Item == 'ReagentMythic')]",
+	"Action": "Remove"
+	},
+	{
+	"Path": "$.SecretStash.Materials[?(@.Item == 'EssenceMythic')]",
+	"Action": "Remove"
+	},
+	{
+	"Path": "$.SecretStash.RollsPerRarity",
+	"Action": "Overwrite",
+	"Value": [1, 1, 1, 1, 0]
+	},
+	{
+		"Path": "$.SecretStash.GambleRarityChance",
+		"Action": "Overwrite",
+		"Value": [ 10, 68, 15, 4, 2, 0 ]
+	},
+	{
+		"Path": "$.SecretStash.GambleRarityChanceByRarity",
+		"Action": "Overwrite",
+		"Value": 
+		[
+			[ 0, 90, 9, 1, 0, 0 ],
+			[ 0, 0, 90, 9, 1, 0 ],
+			[ 0, 0, 0, 90, 9, 0 ],
+			[ 0, 0, 0, 0, 90, 0 ],
+			[ 0, 0, 0, 0, 0, 0 ]
+		]
+	},
+	//Update TreasureMaps.BiomeInfo
+		{
 		"Path": "$.TreasureMap.BiomeInfo",
 		"Action": "Overwrite",
 		"Value": 
-[
-      { "Biome": "Meadows",     "Cost": 100, "ForestTokens": 1,  "MinRadius": 0,    "MaxRadius": 1500 },
-      { "Biome": "BlackForest", "Cost": 200, "ForestTokens": 2, "MinRadius": 500,  "MaxRadius": 6000 },
-      { "Biome": "Ocean",       "Cost": -1,  "ForestTokens": 0,  "MinRadius": 500,  "MaxRadius": 8000 },
-      { "Biome": "Swamp",       "Cost": 300, "ForestTokens": 3, "MinRadius": 2000, "MaxRadius": 6000 },
-      { "Biome": "Mountain",    "Cost": 400, "ForestTokens": 4, "MinRadius": 2000, "MaxRadius": 6000 },
-      { "Biome": "Plains",      "Cost": 500, "ForestTokens": 5, "MinRadius": 3000, "MaxRadius": 6000 },
-      { "Biome": "Mistlands",   "Cost": 600, "ForestTokens": 6, "MinRadius": 5000, "MaxRadius": 9000 },
-      { "Biome": "AshLands",    "Cost": 700, "ForestTokens": 7, "MinRadius": 8000, "MaxRadius": 15000 }
-    ]
-	  }
+		[
+			{ "Biome": "Meadows",     "Cost": 100, "ForestTokens": 1,  "MinRadius": 0,    "MaxRadius": 1500 },
+			{ "Biome": "BlackForest", "Cost": 200, "ForestTokens": 2, "MinRadius": 500,  "MaxRadius": 6000 },
+			{ "Biome": "Ocean",       "Cost": -1,  "ForestTokens": 0,  "MinRadius": 500,  "MaxRadius": 8000 },
+			{ "Biome": "Swamp",       "Cost": 300, "ForestTokens": 3, "MinRadius": 2000, "MaxRadius": 6000 },
+			{ "Biome": "Mountain",    "Cost": 400, "ForestTokens": 4, "MinRadius": 2000, "MaxRadius": 6000 },
+			{ "Biome": "Plains",      "Cost": 500, "ForestTokens": 5, "MinRadius": 3000, "MaxRadius": 6000 },
+			{ "Biome": "Mistlands",   "Cost": 600, "ForestTokens": 6, "MinRadius": 5000, "MaxRadius": 9000 },
+			{ "Biome": "AshLands",    "Cost": 700, "ForestTokens": 7, "MinRadius": 8000, "MaxRadius": 15000 }
+		]
+		}
   ]
 }

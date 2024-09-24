@@ -63,6 +63,16 @@
         { "item": "Eitr", "amount": 1 }
       ]
 	  },
+    //vanilla version has no recipe for mythic components
+	  // {
+    //   "Path": "$.recipes[?(@.name == 'Recipe_ShardMythicUpgrade')].resources",
+    //   "Action": "Overwrite",
+    //   "Value":[
+    //       { "item": "ShardLegendary", "amount": 5 },
+    //       { "item": "RunestoneMythic", "amount": 1 },
+    //       { "item": "Eitr", "amount": 1 }
+    //     ]
+    // },
     // Remove dust recipes
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	  {
@@ -77,6 +87,11 @@
 		"Path": "$.recipes[?(@.name == 'Recipe_DustLegendaryUpgrade')]",
 		"Action": "Remove"
 	  },
+    //vanilla version has no recipe for mythic components
+	  // {
+    //   "Path": "$.recipes[?(@.name == 'Recipe_DustMythicUpgrade')]",
+    //   "Action": "Remove"
+    // },
     ///////////////////////////////////////////////////////////////////////////////////////////////
 	  {
 		"Path": "$.recipes[?(@.name == 'Recipe_ReagentRareUpgrade')].resources",
@@ -135,6 +150,16 @@
         { "item": "Eitr", "amount": 1 }
       ]
 	  },
+    //vanilla version has no recipe for mythic components
+	  // {
+    //   "Path": "$.recipes[?(@.name == 'Recipe_ReagentMythicUpgrade')].resources",
+    //   "Action": "Overwrite",
+    //   "Value":[
+    //       { "item": "ReagentLegendary", "amount": 5  },
+    //       { "item": "RunestoneMythic", "amount": 1 },
+    //       { "item": "Eitr", "amount": 1 }
+    //     ]
+    // }, 
     ///////////////////////////////////////////////////////////////////////////////////////////////
 	  {
 		"Path": "$.recipes[?(@.name == 'Recipe_EssenceRareUpgrade')].resources",
@@ -193,6 +218,16 @@
         { "item": "Eitr", "amount": 1 }
       ]
 	  },
+    //vanilla version has no recipe for mythic components
+	  // {
+    //   "Path": "$.recipes[?(@.name == 'Recipe_EssenceMythicUpgrade')].resources",
+    //   "Action": "Overwrite",
+    //   "Value":[
+    //       { "item": "EssenceLegendary", "amount": 5  },
+    //       { "item": "RunestoneMythic", "amount": 1 },
+    //       { "item": "Eitr", "amount": 1 }
+    //     ]
+    // },  
     ///////////////////////////////////////////////////////////////////////////////////////////////
 	  {
 		"Path": "$.recipes[?(@.name == 'Recipe_RunestoneRareUpgrade')].resources",
@@ -256,6 +291,18 @@
         { "item": "Eitr", "amount": 1 }
       ]
 	  },
+    //vanilla version has no recipe for mythic components
+	  // {
+    //   "Path": "$.recipes[?(@.name == 'Recipe_RunestoneMythicUpgrade')].resources",
+    //   "Action": "Overwrite",
+    //   "Value":[
+    //       { "item": "RunestoneLegendary", "amount": 5  },
+    //       { "item": "MoltenCore", "amount": 1 },
+    //       { "item": "Thunderstone", "amount": 3 },
+    //       { "item": "Eitr", "amount": 1 }
+    //     ]
+    // },
+
     // Conversion Recipes
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // Remove dust recipes
@@ -276,6 +323,11 @@
 		"Path": "$.recipes[?(@.name == 'Recipe_LegendaryShardToDust_Conversion')]",
 		"Action": "Remove"
 	  },
+    //vanilla version has no recipe for mythic components
+	  // {
+    //   "Path": "$.recipes[?(@.name == 'Recipe_MythicShardToDust_Conversion')]",
+    //   "Action": "Remove"
+    // },  
     ///////////////////////////////////////////////////////////////////////////////////////////////
 	  {
 		"Path": "$.recipes[?(@.name == 'Recipe_MagicShardToEssence_Conversion')].resources",
@@ -337,6 +389,15 @@
         { "item": "Eitr", "amount": 1 }
       ]
 	  },
+    //vanilla version has no recipe for mythic components
+	  // {
+    //   "Path": "$.recipes[?(@.name == 'Recipe_MythicShardToEssence_Conversion')].resources",
+    //   "Action": "Overwrite",
+    //   "Value":[
+    //       { "item": "ShardMythic", "amount": 2 },
+    //       { "item": "Eitr", "amount": 1 }
+    //     ]
+    // },
     ///////////////////////////////////////////////////////////////////////////////////////////////
 	  {
 		"Path": "$.recipes[?(@.name == 'Recipe_MagicShardToReagent_Conversion')].resources",
@@ -410,6 +471,17 @@
         { "item": "Eitr", "amount": 1 }
       ]
 	  },
+    //vanilla version has no recipe for mythic components
+	  // {
+    //   "Path": "$.recipes[?(@.name == 'Recipe_MythicShardToReagent_Conversion')].resources",
+    //   "Action": "Overwrite",
+    //   "Value":[
+    //       { "item": "ShardMythic", "amount": 2 },
+    //       { "item": "Pukeberries", "amount": 1 },
+    //       { "item": "BoneFragments", "amount": 20 },
+    //       { "item": "Eitr", "amount": 1 }
+    //     ]
+    // },  
     // Remove junk recipes
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	  {
@@ -443,6 +515,14 @@
 	  {
 		"Path": "$.recipes[?(@.name == 'Recipe_YagluthThingRunestone')]",
 		"Action": "Remove"
-	  }
+	  },
+	  {
+      "Path": "$.recipes[?(@.name == 'Recipe_SeekerQueenRunestone')]",
+      "Action": "Remove"
+    },
+    {
+      "Path": "$.recipes[?(@.name == 'Recipe_FaderRunestone')]",
+      "Action": "Remove"
+    }
   ]
 }
