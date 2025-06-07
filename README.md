@@ -38,17 +38,23 @@ The json priority set on the files is left at a default of 500.
  
 ## Changelog
 
-2.0.2
+2.0.3
 
-		- updated for latest epicloot release 0.10.3
-		- some now redundant balance changes removed
-		- epicloot config file changes
-		- added MainStreetGaming-BetterDiving-1.1.0 to dependencies
+		- updated MainStreetGaming-BetterDiving-1.1.1 dependency
+		- updated RandyKnapp-EpicLoot-0.11.4 dependency
+		- updated Azumatt-Azus_UnOfficial_ConfigManager-18.4.1 dependency
 
 <details>
   <summary>
     Previous changes:
   </summary>
+
+		2.0.2
+
+				- updated for latest epicloot release 0.10.3
+				- some now redundant balance changes removed
+				- epicloot config file changes
+				- added MainStreetGaming-BetterDiving-1.1.0 to dependencies
 
 		2.0.1
 
