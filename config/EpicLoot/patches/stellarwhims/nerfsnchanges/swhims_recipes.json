@@ -63,7 +63,7 @@
         { "item": "Eitr", "amount": 1 }
       ]
 	  },
-    //vanilla version has no recipe for mythic components
+    //placeholder - vanilla version has no recipe for mythic components
 	  // {
     //   "Path": "$.recipes[?(@.name == 'Recipe_ShardMythicUpgrade')].resources",
     //   "Action": "Overwrite",
@@ -87,7 +87,7 @@
 		"Path": "$.recipes[?(@.name == 'Recipe_DustLegendaryUpgrade')]",
 		"Action": "Remove"
 	  },
-    //vanilla version has no recipe for mythic components
+    //placeholder - vanilla version has no recipe for mythic components
 	  // {
     //   "Path": "$.recipes[?(@.name == 'Recipe_DustMythicUpgrade')]",
     //   "Action": "Remove"
@@ -150,7 +150,7 @@
         { "item": "Eitr", "amount": 1 }
       ]
 	  },
-    //vanilla version has no recipe for mythic components
+    //placeholder - vanilla version has no recipe for mythic components
 	  // {
     //   "Path": "$.recipes[?(@.name == 'Recipe_ReagentMythicUpgrade')].resources",
     //   "Action": "Overwrite",
@@ -218,7 +218,7 @@
         { "item": "Eitr", "amount": 1 }
       ]
 	  },
-    //vanilla version has no recipe for mythic components
+    //placeholder - vanilla version has no recipe for mythic components
 	  // {
     //   "Path": "$.recipes[?(@.name == 'Recipe_EssenceMythicUpgrade')].resources",
     //   "Action": "Overwrite",
@@ -291,7 +291,7 @@
         { "item": "Eitr", "amount": 1 }
       ]
 	  },
-    //vanilla version has no recipe for mythic components
+    //placeholder - vanilla version has no recipe for mythic components
 	  // {
     //   "Path": "$.recipes[?(@.name == 'Recipe_RunestoneMythicUpgrade')].resources",
     //   "Action": "Overwrite",
@@ -323,7 +323,7 @@
 		"Path": "$.recipes[?(@.name == 'Recipe_LegendaryShardToDust_Conversion')]",
 		"Action": "Remove"
 	  },
-    //vanilla version has no recipe for mythic components
+    //placeholder - vanilla version has no recipe for mythic components
 	  // {
     //   "Path": "$.recipes[?(@.name == 'Recipe_MythicShardToDust_Conversion')]",
     //   "Action": "Remove"
@@ -389,7 +389,7 @@
         { "item": "Eitr", "amount": 1 }
       ]
 	  },
-    //vanilla version has no recipe for mythic components
+    //placeholder - vanilla version has no recipe for mythic components
 	  // {
     //   "Path": "$.recipes[?(@.name == 'Recipe_MythicShardToEssence_Conversion')].resources",
     //   "Action": "Overwrite",
@@ -471,7 +471,7 @@
         { "item": "Eitr", "amount": 1 }
       ]
 	  },
-    //vanilla version has no recipe for mythic components
+    //placeholder - vanilla version has no recipe for mythic components
 	  // {
     //   "Path": "$.recipes[?(@.name == 'Recipe_MythicShardToReagent_Conversion')].resources",
     //   "Action": "Overwrite",
