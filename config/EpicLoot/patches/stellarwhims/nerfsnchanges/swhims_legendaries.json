@@ -1,42 +1,62 @@
 {
-  "TargetFile": "legendaries.json", 
+  "TargetFile": "legendaries.json",
   "Author": "Stellarwhims",
   "Priority": 500,
-  "RequireAll": true, 
-  "Patches": [ 
-	  {
-		"Path": "$.LegendaryItems[?(@.ID == 'Skofnung')].GuaranteedMagicEffects",
-		"Action": "Overwrite",
-		"Value": [
-      { "Type": "AddSlashingDamage" },
-      { "Type": "ModifyAttackStaminaUse" },
-      { "Type": "ModifyAttackSpeed" }
-    ]
-	  },
-	  {
-		"Path": "$.LegendaryItems[?(@.ID == 'Hofund')].GuaranteedMagicEffects",
-		"Action": "Overwrite",
-		"Value": [
-      { "Type": "AddSlashingDamage" },
-      { "Type": "ModifyAttackStaminaUse" },
-      { "Type": "LifeSteal" }
-    ]
-	  },
-	  {
-		"Path": "$.LegendaryItems[?(@.ID == 'UllrBow')].GuaranteedMagicEffects",
-		"Action": "Overwrite",
-		"Value": [
-      { "Type": "ExplosiveArrows" },
-      { "Type": "AddFrostDamage" }
-    ]
-	  },
-	  {
-		"Path": "$.LegendaryItems[?(@.ID == 'EndlessBow')].GuaranteedMagicEffects",
-		"Action": "Overwrite",
-		"Value": [
-      { "Type": "QuickDraw" },
-      { "Type": "ModifyAttackStaminaUse" }
-    ]
-	  }
+  "RequireAll": true,
+  "Patches": [
+    {
+      "Path": "$.LegendaryItems[?(@.ID == 'Skofnung')].GuaranteedMagicEffects",
+      "Action": "Overwrite",
+      "Value": [
+        {
+          "Type": "AddSlashingDamage"
+        },
+        {
+          "Type": "ModifyAttackStaminaUse"
+        },
+        {
+          "Type": "ModifyAttackSpeed"
+        }
+      ]
+    },
+    {
+      "Path": "$.LegendaryItems[?(@.ID == 'Hofund')].GuaranteedMagicEffects",
+      "Action": "Overwrite",
+      "Value": [
+        {
+          "Type": "AddSlashingDamage"
+        },
+        {
+          "Type": "ModifyAttackStaminaUse"
+        },
+        {
+          "Type": "LifeSteal"
+        }
+      ]
+    },
+    {
+      "Path": "$.LegendaryItems[?(@.ID == 'UllrBow')].GuaranteedMagicEffects",
+      "Action": "Overwrite",
+      "Value": [
+        {
+          "Type": "ExplosiveArrows"
+        },
+        {
+          "Type": "AddFrostDamage"
+        }
+      ]
+    },
+    {
+      "Path": "$.LegendaryItems[?(@.ID == 'EndlessBow')].GuaranteedMagicEffects",
+      "Action": "Overwrite",
+      "Value": [
+        {
+          "Type": "QuickDraw"
+        },
+        {
+          "Type": "ModifyAttackStaminaUse"
+        }
+      ]
+    }
   ]
 }
