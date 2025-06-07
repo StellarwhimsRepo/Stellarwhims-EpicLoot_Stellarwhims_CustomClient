@@ -1,15 +1,19 @@
 ## Recent Changes
 
-2.0.3
+2.0.4
 
-		- updated MainStreetGaming-BetterDiving-1.1.1 dependency
-		- updated RandyKnapp-EpicLoot-0.11.4 dependency
-		- updated Azumatt-Azus_UnOfficial_ConfigManager-18.4.1 dependency
+		- regenerated and updated epicloot config file
 
 <details>
   <summary>
     Previous changes:
   </summary>
+
+		2.0.3
+
+				- updated MainStreetGaming-BetterDiving-1.1.1 dependency
+				- updated RandyKnapp-EpicLoot-0.11.4 dependency
+				- updated Azumatt-Azus_UnOfficial_ConfigManager-18.4.1 dependency
 
 		2.0.2
 
