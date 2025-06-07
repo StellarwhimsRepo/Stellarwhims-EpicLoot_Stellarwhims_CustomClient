@@ -464,6 +464,240 @@
 				}
 			}
 		},
+		//this is so ModifyAttackEitrUse will apply to lanterns, but not torches
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackEitrUse')].Requirements.ExcludedItemNames",
+			"Action": "Add",
+			"Value": [
+				"$item_torch",
+				"$item_torchmist"
+			]
+		},
+		//a lantern is a torch ...
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackEitrUse')].Requirements.AllowedItemTypes",
+			"Action": "Add",
+			"Value": "Torch"
+		},
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackEitrUse')].Requirements",
+			"Action": "Add",
+			"PropertyName": "AllowedRarities",
+			"Value": [
+				"Legendary",
+				"Mythic"
+			]
+		},
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackEitrUse')].ValuesPerRarity",
+			"Action": "Overwrite",
+			"Value": {
+				"Legendary": {
+					"MinValue": 1,
+					"MaxValue": 3,
+					"Increment": 1
+				},
+				"Mythic": {
+					"MinValue": 3,
+					"MaxValue": 6,
+					"Increment": 1
+				}
+			}
+		},
+		//this is so ModifyAttackHealthUse will apply to lanterns, but not torches
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackHealthUse')].Requirements.ExcludedItemNames",
+			"Action": "Add",
+			"Value": [
+				"$item_torch",
+				"$item_torchmist"
+			]
+		},
+		//a lantern is a torch ...
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackHealthUse')].Requirements.AllowedItemTypes",
+			"Action": "Add",
+			"Value": "Torch"
+		},
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackHealthUse')].Requirements",
+			"Action": "Add",
+			"PropertyName": "AllowedRarities",
+			"Value": [
+				"Legendary",
+				"Mythic"
+			]
+		},
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackHealthUse')].ValuesPerRarity",
+			"Action": "Overwrite",
+			"Value": {
+				"Legendary": {
+					"MinValue": 1,
+					"MaxValue": 3,
+					"Increment": 1
+				},
+				"Mythic": {
+					"MinValue": 3,
+					"MaxValue": 6,
+					"Increment": 1
+				}
+			}
+		},
+		//this is so ModifyAttackStaminaUse will apply to lanterns, but not torches
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackStaminaUse')].Requirements.ExcludedItemNames",
+			"Action": "AppendAll",
+			"Value": [
+				"$item_torch",
+				"$item_torchmist"
+			]
+		},
+		//a lantern is a torch ...
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackStaminaUse')].Requirements.AllowedItemTypes",
+			"Action": "Append",
+			"Value": "Torch"
+		},
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackStaminaUse')].Requirements",
+			"Action": "Add",
+			"PropertyName": "AllowedRarities",
+			"Value": [
+				"Legendary",
+				"Mythic"
+			]
+		},
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackStaminaUse')].ValuesPerRarity",
+			"Action": "Overwrite",
+			"Value": {
+				"Legendary": {
+					"MinValue": 1,
+					"MaxValue": 3,
+					"Increment": 1
+				},
+				"Mythic": {
+					"MinValue": 3,
+					"MaxValue": 6,
+					"Increment": 1
+				}
+			}
+		},
+		//this is so ModifyDodgeStaminaUse will apply to lanterns, but not torches
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDodgeStaminaUse')].Requirements.ExcludedItemNames",
+			"Action": "Add",
+			"Value": [
+				"$item_torch",
+				"$item_torchmist"
+			]
+		},
+		//a lantern is a torch ...
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDodgeStaminaUse')].Requirements.AllowedItemTypes",
+			"Action": "Append",
+			"Value": "Torch"
+		},
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDodgeStaminaUse')].Requirements",
+			"Action": "Add",
+			"PropertyName": "AllowedRarities",
+			"Value": [
+				"Legendary",
+				"Mythic"
+			]
+		},
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDodgeStaminaUse')].ValuesPerRarity",
+			"Action": "Overwrite",
+			"Value": {
+				"Legendary": {
+					"MinValue": 1,
+					"MaxValue": 3,
+					"Increment": 1
+				},
+				"Mythic": {
+					"MinValue": 3,
+					"MaxValue": 6,
+					"Increment": 1
+				}
+			}
+		},
+		//this is so ModifyDrawStaminaUse will apply to lanterns, but not torches
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDrawStaminaUse')].Requirements.ExcludedItemNames",
+			"Action": "Add",
+			"Value": [
+				"$item_torch",
+				"$item_torchmist"
+			]
+		},
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDrawStaminaUse')].Requirements",
+			"Action": "Add",
+			"PropertyName": "AllowedRarities",
+			"Value": [
+				"Legendary",
+				"Mythic"
+			]
+		},
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDrawStaminaUse')].ValuesPerRarity",
+			"Action": "Overwrite",
+			"Value": {
+				"Legendary": {
+					"MinValue": 1,
+					"MaxValue": 3,
+					"Increment": 1
+				},
+				"Mythic": {
+					"MinValue": 3,
+					"MaxValue": 6,
+					"Increment": 1
+				}
+			}
+		},
+		//this is so ModifyLowHealth will apply to lanterns, but not torches
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyLowHealth')].Requirements.ExcludedItemNames",
+			"Action": "Add",
+			"Value": [
+				"$item_torch",
+				"$item_torchmist"
+			]
+		},
+		//a lantern is a torch ...
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyLowHealth')].Requirements.AllowedItemTypes",
+			"Action": "Append",
+			"Value": "Torch"
+		},
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyLowHealth')].Requirements",
+			"Action": "Add",
+			"PropertyName": "AllowedRarities",
+			"Value": [
+				"Legendary",
+				"Mythic"
+			]
+		},
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyLowHealth')].ValuesPerRarity",
+			"Action": "Overwrite",
+			"Value": {
+				"Legendary": {
+					"MinValue": 5,
+					"MaxValue": 10,
+					"Increment": 1
+				},
+				"Mythic": {
+					"MinValue": 10,
+					"MaxValue": 15,
+					"Increment": 1
+				}
+			}
+		},
 		{
 			"Path": "$.MagicItemEffects[?(@.Type == 'AddBluntDamage')].Requirements.ExcludedItemNames",
 			"Action": "Append",
@@ -1074,31 +1308,6 @@
 			"Value": "Torch"
 		},
 		{
-			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyJumpStaminaUse')].Requirements",
-			"Action": "Add",
-			"PropertyName": "AllowedRarities",
-			"Value": [
-				"Legendary",
-				"Mythic"
-			]
-		},
-		{
-			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyJumpStaminaUse')].ValuesPerRarity",
-			"Action": "Overwrite",
-			"Value": {
-				"Legendary": {
-					"MinValue": 1,
-					"MaxValue": 6,
-					"Increment": 1
-				},
-				"Mythic": {
-					"MinValue": 6,
-					"MaxValue": 12,
-					"Increment": 1
-				}
-			}
-		},
-		{
 			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackStaminaUse')].Requirements.ExcludedItemNames",
 			"Action": "Append",
 			"Value": "$item_lantern"
@@ -1185,6 +1394,7 @@
 			"Action": "Append",
 			"Value": "Torch"
 		},
+		//limit modifyattackspeed to melee
 		{
 			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackSpeed')].Requirements.AllowedItemTypes",
 			"Action": "Overwrite",
@@ -1193,6 +1403,12 @@
 				"TwoHandedWeapon",
 				"TwoHandedWeaponLeft"
 			]
+		},
+		//delete modifydiscoveryradius
+		{
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDiscoveryRadius')].Requirements.AllowedItemTypes",
+			"Action": "Overwrite",
+			"Value": []
 		},
 		//delete paralyze
 		{

@@ -1,13 +1,19 @@
 ## Recent Changes
 
-2.0.4
+2.0.5
 
-		- regenerated and updated epicloot config file
+		- ModifyAttackEitrUse, ModifyAttackHealthUse, ModifyDodgeStaminaUse, ModifyDrawStaminaUse, ModifyLowHealth nerfed to reflect similar previous nerfs to character resource usage
+		- removed modify discovery radius
+		- unnerfed modifyjumpstaminause (mistlands quality of life change)
 
 <details>
   <summary>
     Previous changes:
   </summary>
+
+		2.0.4
+
+				- regenerated and updated epicloot config file
 
 		2.0.3
 
