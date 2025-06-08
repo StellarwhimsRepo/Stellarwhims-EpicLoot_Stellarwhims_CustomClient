@@ -1,15 +1,19 @@
 ## Recent Changes
 
-2.0.5
+2.0.6
 
-		- ModifyAttackEitrUse, ModifyAttackHealthUse, ModifyDodgeStaminaUse, ModifyDrawStaminaUse, ModifyLowHealth nerfed to reflect similar previous nerfs to character resource usage
-		- removed modify discovery radius
-		- unnerfed modifyjumpstaminause (mistlands quality of life change)
+		- error corrections
 
 <details>
   <summary>
     Previous changes:
   </summary>
+
+		2.0.5
+
+				- ModifyAttackEitrUse, ModifyAttackHealthUse, ModifyDodgeStaminaUse, ModifyDrawStaminaUse, ModifyLowHealth nerfed to reflect similar previous nerfs to character resource usage
+				- removed modify discovery radius
+				- unnerfed modifyjumpstaminause (mistlands quality of life change)
 
 		2.0.4
 

@@ -466,8 +466,9 @@
 		},
 		//this is so ModifyAttackEitrUse will apply to lanterns, but not torches
 		{
-			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackEitrUse')].Requirements.ExcludedItemNames",
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackEitrUse')].Requirements",
 			"Action": "Add",
+			"PropertyName": "ExcludedItemNames",
 			"Value": [
 				"$item_torch",
 				"$item_torchmist"
@@ -475,8 +476,9 @@
 		},
 		//a lantern is a torch ...
 		{
-			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackEitrUse')].Requirements.AllowedItemTypes",
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackEitrUse')].Requirements",
 			"Action": "Add",
+			"PropertyName": "AllowedItemTypes",
 			"Value": "Torch"
 		},
 		{
@@ -506,8 +508,9 @@
 		},
 		//this is so ModifyAttackHealthUse will apply to lanterns, but not torches
 		{
-			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackHealthUse')].Requirements.ExcludedItemNames",
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackHealthUse')].Requirements",
 			"Action": "Add",
+			"PropertyName": "ExcludedItemNames",
 			"Value": [
 				"$item_torch",
 				"$item_torchmist"
@@ -515,8 +518,9 @@
 		},
 		//a lantern is a torch ...
 		{
-			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackHealthUse')].Requirements.AllowedItemTypes",
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackHealthUse')].Requirements",
 			"Action": "Add",
+			"PropertyName": "AllowedItemTypes",
 			"Value": "Torch"
 		},
 		{
@@ -586,8 +590,9 @@
 		},
 		//this is so ModifyDodgeStaminaUse will apply to lanterns, but not torches
 		{
-			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDodgeStaminaUse')].Requirements.ExcludedItemNames",
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDodgeStaminaUse')].Requirements",
 			"Action": "Add",
+			"PropertyName": "ExcludedItemNames",
 			"Value": [
 				"$item_torch",
 				"$item_torchmist"
@@ -626,8 +631,9 @@
 		},
 		//this is so ModifyDrawStaminaUse will apply to lanterns, but not torches
 		{
-			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDrawStaminaUse')].Requirements.ExcludedItemNames",
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyDrawStaminaUse')].Requirements",
 			"Action": "Add",
+			"PropertyName": "ExcludedItemNames",
 			"Value": [
 				"$item_torch",
 				"$item_torchmist"
@@ -660,8 +666,9 @@
 		},
 		//this is so ModifyLowHealth will apply to lanterns, but not torches
 		{
-			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyLowHealth')].Requirements.ExcludedItemNames",
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyLowHealth')].Requirements",
 			"Action": "Add",
+			"PropertyName": "ExcludedItemNames",
 			"Value": [
 				"$item_torch",
 				"$item_torchmist"
@@ -1308,12 +1315,12 @@
 			"Value": "Torch"
 		},
 		{
-			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackStaminaUse')].Requirements.ExcludedItemNames",
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyJumpStaminaUse')].Requirements.ExcludedItemNames",
 			"Action": "Append",
 			"Value": "$item_lantern"
 		},
 		{
-			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackStaminaUse')].Requirements",
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyJumpStaminaUse')].Requirements",
 			"Action": "Add",
 			"PropertyName": "AllowedRarities",
 			"Value": [
@@ -1322,7 +1329,7 @@
 			]
 		},
 		{
-			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyAttackStaminaUse')].ValuesPerRarity",
+			"Path": "$.MagicItemEffects[?(@.Type == 'ModifyJumpStaminaUse')].ValuesPerRarity",
 			"Action": "Overwrite",
 			"Value": {
 				"Legendary": {
