@@ -35,3 +35,9 @@ Since this mod now uses json config files, no files from the original EpicLoot a
 If you are using other Epic Loot json config mods, you will need to consult the Epic Loot discord for help integrating them.
 
 The json priority set on the files is left at a default of 500.
+
+## Errors Troubleshooting
+
+If you get a bunch of bepinex console errors related to swhims_recipe.json, this is an old config file that the mod manager will not delete on its own.
+Simply delete the file using the mod manager config file editor or directly from your storage drive location.
+This file fortunately does not break anything so you can ignore the related error messages if you want.
