@@ -1,14 +1,18 @@
 ## Recent Changes
 
-2.0.6
+2.0.7
 
-		- error corrections
+		- mistlands and ashlands non-starred creatures now drop items as well as mats
 
 <details>
   <summary>
     Previous changes:
   </summary>
 
+		2.0.6
+
+				- error corrections
+		
 		2.0.5
 
 				- ModifyAttackEitrUse, ModifyAttackHealthUse, ModifyDodgeStaminaUse, ModifyDrawStaminaUse, ModifyLowHealth nerfed to reflect similar previous nerfs to character resource usage
