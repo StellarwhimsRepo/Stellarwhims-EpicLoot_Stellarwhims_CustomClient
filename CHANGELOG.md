@@ -1,14 +1,19 @@
 ## Recent Changes
 
-2.0.7
+2.0.8
 
-		- mistlands and ashlands non-starred creatures now drop items as well as mats
+		- added JereKuusela-Dungeon_Splitter-1.6.0 as a dependancy
+		for server instance health
 
 <details>
   <summary>
     Previous changes:
   </summary>
 
+		2.0.7
+
+				- mistlands and ashlands non-starred creatures now drop items as well as mats
+		
 		2.0.6
 
 				- error corrections

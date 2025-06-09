@@ -7,6 +7,7 @@
 	"dependencies": [
 		"RandyKnapp-EpicLoot-0.11.4",
 		"MainStreetGaming-BetterDiving-1.1.1",
+		"JereKuusela-Dungeon_Splitter-1.6.0",
 		"Azumatt-Azus_UnOfficial_ConfigManager-18.4.1",
 		"denikson-BepInExPack_Valheim-5.4.2202"
 	]
