@@ -1,14 +1,19 @@
 ## Recent Changes
 
-2.0.8
+2.0.9
 
-		- added JereKuusela-Dungeon_Splitter-1.6.0 as a dependancy
-		for server instance health
+		- added Searica-NetworkTweaks-0.1.5 as a dependancy
+		for server network health
 
 <details>
   <summary>
     Previous changes:
   </summary>
+
+		2.0.8
+
+				- added JereKuusela-Dungeon_Splitter-1.6.0 as a dependancy
+				for server instance health
 
 		2.0.7
 
