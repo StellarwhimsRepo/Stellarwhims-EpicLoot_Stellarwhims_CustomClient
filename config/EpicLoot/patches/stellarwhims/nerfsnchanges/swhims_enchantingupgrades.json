@@ -1,0 +1,22 @@
+{
+  "TargetFile": "enchantingupgrades.json",
+  "Author": "Stellarwhims",
+  "Priority": 500,
+  "RequireAll": true,
+  "Patches": [
+    //Remove Dusts from UpgradeCosts.Enchant
+    {
+      "Path": "$.UpgradeCosts.Enchant",
+      "Action": "Overwrite",
+        "Value": [
+            [ { "Item": "SurtlingCore", "Amount": 3 }, { "Item": "Copper", "Amount": 2 } ],
+            [ { "Item": "GreydwarfEye", "Amount": 20 }, { "Item": "Bronze", "Amount": 2 } ],
+            [ { "Item": "Ooze", "Amount": 20 }, { "Item": "Iron", "Amount": 2 } ],
+            [ { "Item": "Crystal", "Amount": 20 }, { "Item": "Silver", "Amount": 2 } ],
+            [ { "Item": "DragonTear", "Amount": 5 }, { "Item": "BlackMetal", "Amount": 2 } ],
+            [ { "Item": "Eitr", "Amount": 10 }, { "Item": "Bilebag", "Amount": 2 } ],
+            [ { "Item": "MorgenHeart", "Amount": 10 }, { "Item": "FlametalNew", "Amount": 2 } ]
+        ]
+    }
+  ]
+}
