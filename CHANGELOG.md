@@ -1,15 +1,19 @@
 ## Recent Changes
 
-2.0.9
+2.0.10
 
-		- added Searica-NetworkTweaks-0.1.5 as a dependancy
-		for server network health
+		- removed dusts from enchanting table upgrades requirements. woopsie.
 
 <details>
   <summary>
     Previous changes:
   </summary>
 
+		2.0.9
+
+				- added Searica-NetworkTweaks-0.1.5 as a dependancy
+				for server network health
+		
 		2.0.8
 
 				- added JereKuusela-Dungeon_Splitter-1.6.0 as a dependancy
