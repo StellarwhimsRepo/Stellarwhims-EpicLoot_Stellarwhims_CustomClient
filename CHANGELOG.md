@@ -1,14 +1,18 @@
 ## Recent Changes
 
-2.0.10
+2.0.11
 
-		- removed dusts from enchanting table upgrades requirements. woopsie.
+		- changed network mod to glawks-BetterNetworking_Valheim-2.3.2 recompile
 
 <details>
   <summary>
     Previous changes:
   </summary>
 
+		2.0.10
+
+				- removed dusts from enchanting table upgrades requirements. woopsie.
+		
 		2.0.9
 
 				- added Searica-NetworkTweaks-0.1.5 as a dependancy
