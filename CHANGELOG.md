@@ -1,14 +1,18 @@
 ## Recent Changes
 
-2.0.11
+2.0.12
 
-		- changed network mod to glawks-BetterNetworking_Valheim-2.3.2 recompile
+		- changed mythic item drop color to red. noticed named legendary is already yellow.
 
 <details>
   <summary>
     Previous changes:
   </summary>
 
+		2.0.11
+
+				- changed network mod to glawks-BetterNetworking_Valheim-2.3.2 recompile
+		
 		2.0.10
 
 				- removed dusts from enchanting table upgrades requirements. woopsie.
