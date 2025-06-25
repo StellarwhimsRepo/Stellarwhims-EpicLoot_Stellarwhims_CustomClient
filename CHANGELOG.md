@@ -1,13 +1,18 @@
 ## Recent Changes
 
-2.0.13
+2.0.14
 
-		- removing eitr effects from pre-mistlands gear.
+		- brought back bloodlust for pre mistlands gear (my bad)
+		- removed changes for modifyattackeitruse. since it only applies to items that use eitr on attack (also my bad).
 
 <details>
   <summary>
     Previous changes:
   </summary>
+
+		2.0.13
+
+				- removing eitr effects from pre-mistlands gear.
 
 		2.0.12
 
