@@ -1,13 +1,17 @@
 ## Recent Changes
 
-2.0.12
+2.0.13
 
-		- changed mythic item drop color to red. noticed named legendary is already yellow.
+		- removing eitr effects from pre-mistlands gear.
 
 <details>
   <summary>
     Previous changes:
   </summary>
+
+		2.0.12
+
+				- changed mythic item drop color to red. noticed named legendary is already yellow.
 
 		2.0.11
 
